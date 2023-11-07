@@ -8,7 +8,10 @@ const Breadcrumb = () => {
           <div className="row">
             <div className="col space-x-2 flex items-center">
               <div>
-                <a href="index.html" className="text-accentOne text-['100px']">
+                <a
+                  href="index.html"
+                  className="text-orange-500  text-['100px']"
+                >
                   <BsFillHouseDoorFill />
                 </a>
               </div>

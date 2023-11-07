@@ -1,9 +1,32 @@
 import { baseUrl } from "@/config/appConfig";
-import { AiFillStar } from "react-icons/ai";
+import { useEffect, useState } from "react";
 import { BsListUl } from "react-icons/bs";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { LuGripHorizontal } from "react-icons/lu";
+import ProductCard from "../Products/ProductCard";
+
 const Product = () => {
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([] as any);
+
+  const getProducts = async () => {
+    const getProducts = await fetch(`${baseUrl}/api/product/get-products`, {
+      method: "GET",
+    });
+    const result = await getProducts.json();
+
+    if (result.status == true) {
+      setProducts(result.products);
+      setLoading(false);
+    } else {
+      setProducts([]);
+      setLoading(true);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <>
       <section className="pt-5">
@@ -21,7 +44,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne bg focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400  bg focus:ring-0"
                         id="bedroom"
                         // defaultChecked=""
                       />
@@ -37,7 +60,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400  focus:ring-0"
                         id="sofa"
                       />
                       <label htmlFor="sofa">Sofa</label>
@@ -52,7 +75,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400  focus:ring-0"
                         id="outdoor"
                       />
                       <label htmlFor="outdoor">Outdoor</label>
@@ -67,7 +90,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400  focus:ring-0"
                         id="office"
                       />
                       <label htmlFor="office">Office</label>
@@ -88,7 +111,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400  focus:ring-0"
                         // defaultChecked=""
                       />
                       <label htmlFor="women">Hatil</label>
@@ -100,7 +123,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400  focus:ring-0"
                       />
                       <label htmlFor="women">Brothers</label>
                     </form>
@@ -111,7 +134,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400  focus:ring-0"
                       />
                       <label htmlFor="women">Navana</label>
                     </form>
@@ -122,7 +145,7 @@ const Product = () => {
                     <form className="space-x-2">
                       <input
                         type="checkbox"
-                        className="border border-paragraph rounded-none h-4 w-4 text-accentOne focus:ring-0"
+                        className="border border-paragraph rounded-none h-4 w-4 text-orange-400 focus:ring-0"
                       />
                       <label htmlFor="women">Partex</label>
                     </form>
@@ -251,7 +274,7 @@ const Product = () => {
                     />
                     <label
                       htmlFor="yellow-color"
-                      className="w-5 h-5 border border-paragraph rounded-sm bg-accentOne inline-block cursor-pointer"
+                      className="w-5 h-5 border border-paragraph rounded-sm bg-orange-500 inline-block cursor-pointer"
                     />
                   </div>
                   <div className="select-color">
@@ -286,14 +309,14 @@ const Product = () => {
               {/* Row 1 */}
               <div className="flex justify-between items-center">
                 <div>
-                  <select className="w-44 border border-separatorColor px-4 py-3 focus:ring-0 focus:border-accentOne">
-                    <option value="">Default Sorting</option>
+                  <select className="w-44 border border-separatorColor px-4 py-3 focus:ring-0 focus:border-orange-500">
+                    <option value="focus">Default Sorting</option>
                     <option value="">Price low - high</option>
                     <option value="">Price high - low</option>
                   </select>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="rounded-sm py-1 px-3 bg-accentOne text-white cursor-pointer">
+                  <div className="rounded-sm py-1 px-3 bg-orange-400 text-white cursor-pointer">
                     <i className="fa-solid fa-grip" />
                     <LuGripHorizontal />
                   </div>
@@ -303,572 +326,37 @@ const Product = () => {
                 </div>
               </div>
               {/* Row 2 */}
-              <div className="grid grid-cols-3 gap-5">
-                {/* Col 1 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-1.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 2 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-2.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 3 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-3.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 4 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-4.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 5 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-5.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 6 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-6.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 7 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-7.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 8 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-8.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* Col 9 */}
-                <div className="col border border-separate group">
-                  {/* product image */}
-                  <div className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={`${baseUrl}/img/product/product-9.jpg`}
-                      alt=""
-                      className="w-full"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-solid fa-magnifying-glass" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 rounded-full bg-accentOne p-2 flex items-center justify-center"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Product description */}
-                  <div>
-                    <h3 className="pl-3 pt-3 text-primary font-bold text-lg">
-                      Wooden Chair
-                    </h3>
-                    {/* Product Price */}
-                    <div className="flex items-center space-x-3 pl-3">
-                      <h4 className="text-paragraph font-medium text-lg">
-                        $45.00
-                      </h4>
-                      <h4 className="line-through text-paragraph font-normal text-sm">
-                        $55.00
-                      </h4>
-                    </div>
-                    {/* Product Rating*/}
-                    <div className="flex items-center space-x-3 pl-3 pb-3">
-                      <span className="flex text-accentOne">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </span>
-                      <div>
-                        <p className="text-paragraph">(150)</p>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <a
-                        href="#"
-                        className="text-primary border border-accentOne w-full block py-1 font-medium hover:bg-gradient-to-r from-accentOne to-accentTwo hover:text-white transition duration-150"
-                      >
-                        Add to Cart
-                      </a>
-                    </div>
-                  </div>
+              <div className="">
+                <div className="w-full grid sm:grid-cols-1 md:grid-cols-3 rounded-lg grid-cols-3 gap-2 px-12">
+                  {loading ? null : (
+                    <>
+                      {products.map((item: any, index: number) => (
+                        <div
+                          key={`product-${index}`}
+                          className="col sm:col-span-1 md:col-span-1 p-1  border border-orange-500  shadow rounded-lg border-separate group"
+                        >
+                          <ProductCard product={item} />
+                        </div>
+                      ))}
+                    </>
+                  )}
                 </div>
               </div>
               {/* Row 3 */}
               <div className="flex items-center space-x-3 w-20 mx-auto">
-                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-accentOne text-white cursor-pointer">
+                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-orange-500 hover:bg-orange-500  text-white cursor-pointer">
                   1
                 </div>
-                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-white hover:bg-accentOne  transition duration-500 cursor-pointer">
+                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-orange-400 hover:bg-orange-500  transition duration-500 cursor-pointer">
                   2
                 </div>
-                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-white hover:bg-accentOne   transition duration-500 cursor-pointer">
+                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-orange-400 hover:bg-orange-500   transition duration-500 cursor-pointer">
                   3
                 </div>
-                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-white hover:bg-accentOne  transition duration-500 cursor-pointer">
+                <div className="h-5 w-5 rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-orange-400 hover:bg-orange-500  transition duration-500 cursor-pointer">
                   4
                 </div>
-                <div className=" rounded-sm border border-separatorColor flex items-center justify-center px-4 py-4 bg-white hover:bg-accentOne  transition duration-500 cursor-pointer">
+                <div className=" rounded-sm border border-separatorColor flex items-center justify-center  p-2 bg-orange-400 hover:bg-orange-500  transition duration-500 cursor-pointer">
                   <FaLongArrowAltRight />
                 </div>
               </div>

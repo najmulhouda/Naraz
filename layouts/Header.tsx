@@ -238,7 +238,7 @@ const Header = () => {
                   <Link href={`${baseUrl}/shop`}>Shop</Link>
                 </span>
                 <span className="hover:bg-orange-500 p-4">
-                  <Link href={`${baseUrl}/about-us`}>About Us</Link>
+                  <Link href={`${baseUrl}/about`}>About Us</Link>
                 </span>
                 <span className="hover:bg-orange-500 p-4">
                   <Link href={`${baseUrl}/contact-us`}>Contact Us</Link>

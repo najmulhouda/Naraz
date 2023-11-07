@@ -2,7 +2,7 @@ import { baseUrl } from "@/config/appConfig";
 import { useEffect, useState } from "react";
 import ProductCard from "../Products/ProductCard";
 
-const NewArrival = () => {
+const ForYou = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([] as any);
 
@@ -27,16 +27,16 @@ const NewArrival = () => {
 
   return (
     <div className="container">
-      <h2 className="text-center font-semibold text-3xl uppercase pb-10">
-        Top New Arrival
+      <h2 className="text-center pt-8 mb-8 bg-orange-500 dark:bg-gray-800 font-semibold text-3xl uppercase pb-10">
+        Best Collection For you
       </h2>
-      <div className="w-full grid sm:grid-cols-1 md:grid-cols-4 rounded-lg grid-cols-4 gap-2 ">
+      <div className="w-full grid sm:grid-cols-1 md:grid-cols-3 rounded-lg grid-cols-5 gap-4 px-12">
         {loading ? null : (
           <>
             {products.map((item: any, index: number) => (
               <div
                 key={`product-${index}`}
-                className="col p-2 border border-orange-500  shadow rounded-lg border-separate group"
+                className="col p-4  border border-orange-500  shadow rounded-lg border-separate group"
               >
                 <ProductCard product={item} />
               </div>
@@ -48,4 +48,4 @@ const NewArrival = () => {
   );
 };
 
-export default NewArrival;
+export default ForYou;
