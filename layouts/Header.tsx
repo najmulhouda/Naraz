@@ -1,8 +1,8 @@
+import { setCartList } from "@/lib/reduxStore/slices/storeSlice";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
-import { setCartList } from "@/lib/reduxStore/slices/storeSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import HeaderTop from "@/components/Home/HeaderTop";
@@ -41,6 +41,7 @@ const Header = () => {
   const [Loading, setLoading] = useState(true);
   const [userInfo, setUserInfo] = useState<User>();
 
+  const router = useRouter();
   const getUser = async (id: any) => {
     const getUser = await fetch(`/api/user/${id}`);
     const result = await getUser.json();
@@ -231,19 +232,44 @@ const Header = () => {
             {/* Col 2 */}
             <div className="flex justify-between flex-grow">
               <div className="space-x-5 ">
-                <span className="hover:bg-orange-500 p-4">
+                <span
+                  className={
+                    router.pathname == "/"
+                      ? "bg-orange-600 p-4"
+                      : "hover:bg-orange-500 p-4"
+                  }
+                >
                   <Link href={`${baseUrl}/`}>Home</Link>
                 </span>
-                <span className="hover:bg-orange-500 p-4">
+                <span
+                  className={
+                    router.pathname == "/shop"
+                      ? "bg-orange-600 p-4"
+                      : "hover:bg-orange-500 p-4"
+                  }
+                >
                   <Link href={`${baseUrl}/shop`}>Shop</Link>
                 </span>
-                <span className="hover:bg-orange-500 p-4">
-                  <Link href={`${baseUrl}/about`}>About Us</Link>
+                <span
+                  className={
+                    router.pathname == "/about"
+                      ? "bg-orange-600 p-4"
+                      : "hover:bg-orange-500 p-4"
+                  }
+                >
+                  <Link href={`${baseUrl}/about`}>About</Link>
                 </span>
-                <span className="hover:bg-orange-500 p-4">
+                <span
+                  className={
+                    router.pathname == "/contact-us"
+                      ? "bg-orange-600 p-4"
+                      : "hover:bg-orange-500 p-4"
+                  }
+                >
                   <Link href={`${baseUrl}/contact-us`}>Contact Us</Link>
                 </span>
               </div>
+
               <div>
                 {userInfo ? (
                   <> {userInfo.firstName}</>
