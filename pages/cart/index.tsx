@@ -40,11 +40,13 @@ const CartItemPage = () => {
                         href={`${baseUrl}/product/${item?.product_slug}`}
                         className="w-36 h-32 rounded flex items-center dark:text-white justify-center overflow-hidden"
                       >
-                        <img
-                          src={`${baseUrl}/${item?.product_images[0]?.image}`}
-                          alt=""
-                          className="object-cover"
-                        />
+                        <picture>
+                          <img
+                            src={`${baseUrl}/${item?.product_images[0]?.image}`}
+                            alt=""
+                            className="object-cover"
+                          />
+                        </picture>
                       </Link>
                       <div className="flex-1 flex flex-col justify-between">
                         <div className="flex justify-between mb-3">

@@ -1,21 +1,17 @@
-import React from "react";
-import Head from 'next/head'
-import { baseUrl } from "@/config/appConfig";
+import Head from "next/head";
 
-import DashboardLayout from "@/layouts/DashboardLayout"
-import AddUser from "@/components/User/AddUser"
+import AddUser from "@/components/User/AddUser";
+import DashboardLayout from "@/layouts/DashboardLayout";
 
-
-
-const DashboardPage = () => {
+const AddUserPage = () => {
   return (
     <DashboardLayout>
       <Head>
         <title>Dashboard | E-Commerce</title>
       </Head>
-    <AddUser/>
+      <AddUser />
     </DashboardLayout>
   );
-}
+};
 
-export default DashboardPage;
+export default AddUserPage;

@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import HeaderTop from "@/components/Home/HeaderTop";
 import UserProfileTop from "@/components/User/UserProfileTop";
 import { baseUrl } from "@/config/appConfig";
 import { parseCookies } from "nookies";
@@ -95,72 +94,92 @@ const Header = () => {
       );
     }
   };
-
   return (
     <>
       {/* Start Header */}
-      <header className="bg-orange-500 dark:bg-gray-600">
-        <HeaderTop />
+      <header className="bg-orange-500 dark:bg-gray-600 ">
         {/* Top Header */}
-        <div className="container">
-          <div className="row flex items-center justify-between ">
-            {/* Col 1 */}
-            <div>
-              <Link href="/">
-                <img
-                  src={`${baseUrl}/img/logo/logo.png`}
-                  alt="website-logo"
-                  className="w-40"
-                />
-              </Link>
-            </div>
-            {/* Col 2 */}
-            <div>
-              <div className="flex border border-r-0 rounded-md  ">
-                <img
-                  src={`${baseUrl}/img/icon/search.svg`}
-                  alt="search"
-                  className="pl-3 pr-4"
-                />
-                <form className="w-full">
-                  <input
-                    type="text"
-                    placeholder="search"
-                    className="py-2  focus:outline-0 focus:ring-0 border-0"
+        <div className=" ">
+          <div className="border-b ">
+            <div className="lg:container row flex  items-center justify-between">
+              {/* Col 1 */}
+              <div>
+                <Link href="/">
+                  <img
+                    src={`${baseUrl}/img/logo/logo.png`}
+                    alt="website-logo"
+                    className="md:w-48 md:h-22   "
                   />
-                  <input
-                    type="submit"
-                    defaultValue="Search"
-                    className="bg-orange-400 text-white rounded-r-md px-3 py-2 cursor-pointer"
-                  />
-                </form>
-              </div>
-            </div>
-            {/* Col 3*/}
-            <div className="flex space-x-3">
-              <div className="relative flex flex-col items-center cursor-pointer">
-                <Link href={`${baseUrl}/wishlist`}>
-                  <FaRegHeart className="text-[24px] text-white dark:text-white" />
-                  <span className="bg-orange-400 h-5 w-5 flex items-center justify-center rounded-full absolute -top-2 left-4">
-                    8
-                  </span>
-                  <p className="text-white dark:text-white">WishList</p>
                 </Link>
               </div>
-              <div className="relative flex flex-col items-center cursor-pointer">
-                <Link href={`${baseUrl}/cart`}>
-                  <FaCartPlus className="text-[24px] text-white dark:text-white" />
-                  <span className="bg-orange-400 h-5 w-5 flex items-center justify-center rounded-full absolute -top-2 left-4">
-                    {cartCount}
-                  </span>
-                  <p className="text-white dark:text-white">Cart</p>
-                </Link>
+              {/* Col 2 */}
+              <div className="col w-full col-span-2 flex  pr-3">
+                <div className="flex border border-r-0 rounded-md w-full border-none ">
+                  <form className="w-full">
+                    <label
+                      htmlFor="default-search"
+                      className="mb-2 text-sm font-medium  text-gray-900 sr-only dark:text-white"
+                    >
+                      Search
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="search"
+                        id="default-search"
+                        className="block w-full p-3  text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Search here"
+                        required
+                      />
+                      <button
+                        type="submit"
+                        className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 md:rounded-e-lg  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                          />
+                        </svg>
+                        <span className="sr-only">Search</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
-              <div className="relative flex flex-col items-center cursor-pointer">
-                {renderThemeMode()}
-              </div>
-              <div className=" flex flex-col items-center cursor-pointer">
-                {/* {
+              {/* Col 3*/}
+              <div className="flex space-x-3">
+                <div className="relative flex flex-col items-center cursor-pointer">
+                  <Link href={`${baseUrl}/wishlist`}>
+                    <FaRegHeart className="text-[24px] text-white dark:text-white" />
+                    <span className="bg-orange-400 h-5 w-5 flex items-center justify-center rounded-full absolute -top-2 left-4">
+                      8
+                    </span>
+                    <p className="text-white dark:text-white">WishList</p>
+                  </Link>
+                </div>
+                <div className="relative flex flex-col items-center cursor-pointer">
+                  <Link href={`${baseUrl}/cart`}>
+                    <FaCartPlus className="text-[24px] text-white dark:text-white" />
+                    <span className="bg-orange-400 h-5 w-5 flex items-center justify-center rounded-full absolute -top-2 left-4">
+                      {cartCount}
+                    </span>
+                    <p className="text-white dark:text-white">Cart</p>
+                  </Link>
+                </div>
+                <div className="relative flex flex-col items-center cursor-pointer">
+                  {renderThemeMode()}
+                </div>
+                <div className=" flex flex-col items-center cursor-pointer">
+                  {/* {
                   userInfo == null ?
                     <Link href={`${baseUrl}/login`}>
                       <FaUser className="text-[24px] text-black dark:text-white" />
@@ -172,115 +191,117 @@ const Header = () => {
                     </Link>
                 } */}
 
-                <UserProfileTop />
+                  <UserProfileTop />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
-      {/* End Header */}
+          <nav className=" dark:bg-gray-600 text-white">
+            <div className="lg:container">
+              <div className="row flex items-center md:space-x-5 space-x-1">
+                {/* Col 1 */}
+                <div className="relative group">
+                  <div className="bg-orange-500 ">
+                    <Link
+                      href="#"
+                      className="flex items-center space-x-2 px-5 py-3"
+                    >
+                      <span>
+                        <i className="fa-solid fa-bars text-white" />
+                        <FaBars className="text-white " />
+                      </span>
+                      <span>Categories</span>
+                    </Link>
+                  </div>
+                  {/* Dropdown Menu */}
+                  <div className="text-primary text-black dark:bg-orange-400 absolute w-full shadow-md divide-y divide-dashed divide-separatorColor opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-500">
+                    <Link
+                      href="#"
+                      className="flex items-center space-x-2 px-5 py-3"
+                    >
+                      <span>
+                        <FaBed className="text-accentOne" />
+                      </span>
+                      <span>Bedroom</span>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="flex items-center space-x-2 px-5 py-3"
+                    >
+                      <span>
+                        <FaMattressPillow className="text-accentOne" />
+                      </span>
+                      <span>Mattress</span>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="flex items-center space-x-2 px-5 py-3"
+                    >
+                      <span>
+                        <FaUtensils className="text-accentOne" />
+                      </span>
+                      <span>Dinning</span>
+                    </Link>
+                  </div>
+                </div>
+                {/* Col 2 */}
+                <div className="flex justify-between flex-grow">
+                  <div className="md:space-x-5 space-x-1">
+                    <span
+                      className={
+                        router.pathname == "/"
+                          ? "bg-orange-600 p-2 rounded-md"
+                          : "hover:bg-orange-600 p-2 rounded-md"
+                      }
+                    >
+                      <Link href={`${baseUrl}/`}>Home</Link>
+                    </span>
+                    <span
+                      className={
+                        router.pathname == "/shop"
+                          ? "bg-orange-600 p-2 rounded-md"
+                          : "hover:bg-orange-600 p-2 rounded-md"
+                      }
+                    >
+                      <Link href={`${baseUrl}/shop`}>Shop</Link>
+                    </span>
+                    {/* <span
+                      className={
+                        router.pathname == "/about"
+                          ? "bg-orange-600 p-2 rounded-md"
+                          : "hover:bg-orange-600 p-2 rounded-md"
+                      }
+                    >
+                      <Link href={`${baseUrl}/about`}>About</Link>
+                    </span> */}
+                    {/* <span
+                      className={
+                        router.pathname == "/contact-us"
+                          ? "bg-orange-600 p-4"
+                          : "hover:bg-orange-500 p-4"
+                      }
+                    >
+                      <Link href={`${baseUrl}/contact-us`}>Contact</Link>
+                    </span> */}
+                  </div>
 
-      {/* Start Navbar */}
-      <nav className="bg-orange-300  dark:bg-gray-700 text-white">
-        <div className="container">
-          <div className="row flex items-center space-x-5">
-            {/* Col 1 */}
-            <div className="relative group">
-              <div className="bg-orange-500 ">
-                <Link
-                  href="#"
-                  className="flex items-center space-x-2 px-5 py-3"
-                >
-                  <span>
-                    <i className="fa-solid fa-bars text-white" />
-                    <FaBars className="text-white " />
-                  </span>
-                  <span>All Categories</span>
-                </Link>
-              </div>
-              {/* Dropdown Menu */}
-              <div className="text-primary text-black dark:bg-orange-400 absolute w-full shadow-md divide-y divide-dashed divide-separatorColor opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-500">
-                <Link
-                  href="#"
-                  className="flex items-center space-x-2 px-5 py-3"
-                >
-                  <span>
-                    <FaBed className="text-accentOne" />
-                  </span>
-                  <span>Bedroom</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center space-x-2 px-5 py-3"
-                >
-                  <span>
-                    <FaMattressPillow className="text-accentOne" />
-                  </span>
-                  <span>Mattress</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center space-x-2 px-5 py-3"
-                >
-                  <span>
-                    <FaUtensils className="text-accentOne" />
-                  </span>
-                  <span>Dinning</span>
-                </Link>
-              </div>
-            </div>
-            {/* Col 2 */}
-            <div className="flex justify-between flex-grow">
-              <div className="space-x-5 ">
-                <span
-                  className={
-                    router.pathname == "/"
-                      ? "bg-orange-600 p-4"
-                      : "hover:bg-orange-500 p-4"
-                  }
-                >
-                  <Link href={`${baseUrl}/`}>Home</Link>
-                </span>
-                <span
-                  className={
-                    router.pathname == "/shop"
-                      ? "bg-orange-600 p-4"
-                      : "hover:bg-orange-500 p-4"
-                  }
-                >
-                  <Link href={`${baseUrl}/shop`}>Shop</Link>
-                </span>
-                <span
-                  className={
-                    router.pathname == "/about"
-                      ? "bg-orange-600 p-4"
-                      : "hover:bg-orange-500 p-4"
-                  }
-                >
-                  <Link href={`${baseUrl}/about`}>About</Link>
-                </span>
-                <span
-                  className={
-                    router.pathname == "/contact-us"
-                      ? "bg-orange-600 p-4"
-                      : "hover:bg-orange-500 p-4"
-                  }
-                >
-                  <Link href={`${baseUrl}/contact-us`}>Contact Us</Link>
-                </span>
-              </div>
-
-              <div>
+                  {/* <div>
                 {userInfo ? (
                   <> {userInfo.firstName}</>
                 ) : (
                   <Link href={`${baseUrl}/login`}>Login/Register</Link>
                 )}
+              </div> */}
+                </div>
               </div>
             </div>
-          </div>
+          </nav>
         </div>
-      </nav>
+      </header>
+      {/* End Header */}
+
+      {/* Start Navbar */}
+
       {/* End Navbar */}
     </>
   );

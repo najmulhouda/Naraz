@@ -3,7 +3,7 @@ import Head from "next/head";
 import Orderlists from "@/components/Dashboard/Orderlists";
 import DashboardLayout from "@/layouts/DashboardLayout";
 
-const DashboardPage = () => {
+const OrderPage = () => {
   return (
     <DashboardLayout>
       <Head>
@@ -14,4 +14,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default OrderPage;

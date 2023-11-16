@@ -5,7 +5,7 @@ const TopSlider = () => {
     <>
       <div
         id="default-carousel"
-        className="relative w-full p-8 container rounded"
+        className="relative w-full p-8 lg md:container rounded"
         data-carousel="slide"
       >
         {/* Carousel wrapper */}
@@ -15,55 +15,65 @@ const TopSlider = () => {
             className=" duration-700 ease-in-out rounded"
             data-carousel-item=""
           >
-            <img
-              src={`${baseUrl}/img/slider/slider-6.jpg`}
-              className="absolute rounded block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
+            <picture>
+              <img
+                src={`${baseUrl}/img/slider/slider-6.jpg`}
+                className="absolute rounded block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </picture>
           </div>
           {/* Item 2 */}
           <div
             className="hidden duration-700 ease-in-out"
             data-carousel-item=""
           >
-            <img
-              src={`${baseUrl}/img/slider/slider-2.jpg`}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
+            <picture>
+              <img
+                src={`${baseUrl}/img/slider/slider-2.jpg`}
+                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </picture>
           </div>
           {/* Item 3 */}
           <div
             className="hidden duration-700 ease-in-out"
             data-carousel-item=""
           >
-            <img
-              src={`${baseUrl}/img/slider/slider-3.jpg`}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
+            <picture>
+              <img
+                src={`${baseUrl}/img/slider/slider-3.jpg`}
+                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </picture>
           </div>
           {/* Item 4 */}
           <div
             className="hidden duration-700 ease-in-out"
             data-carousel-item=""
           >
-            <img
-              src={`${baseUrl}/img/slider/slider-4.jpg`}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
+            <picture>
+              <img
+                src={`${baseUrl}/img/slider/slider-4.jpg`}
+                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </picture>
           </div>
           {/* Item 5 */}
           <div
             className="hidden duration-700 ease-in-out"
             data-carousel-item=""
           >
-            <img
-              src={`${baseUrl}/img/slider/slider-2.jpg`}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
+            <picture>
+              <img
+                src={`${baseUrl}/img/slider/slider-2.jpg`}
+                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </picture>
           </div>
         </div>
         {/* Slider indicators */}

@@ -13,11 +13,13 @@ const SellerCart = () => {
         <div className="grid grid-cols-5 gap-4">
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-01.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-01.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -82,11 +84,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-02.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-02.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -151,11 +155,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-03.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-03.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -220,11 +226,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-04.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-04.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -289,11 +297,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-05.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-05.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -358,11 +368,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-06.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-06.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -427,11 +439,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-07.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-07.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -496,11 +510,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-08.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-08.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -565,11 +581,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-09.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-09.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>
@@ -634,11 +652,13 @@ const SellerCart = () => {
           </div>
           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
             <div>
-              <img
-                src={`${baseUrl}/img/user/user-10.png`}
-                className="w-20 h-20 rounded-full"
-                alt=""
-              />
+              <picture>
+                <img
+                  src={`${baseUrl}/img/user/user-10.png`}
+                  className="w-20 h-20 rounded-full"
+                  alt=""
+                />
+              </picture>
             </div>
             <div>
               <h2 className="p-1">Jhon Doe</h2>

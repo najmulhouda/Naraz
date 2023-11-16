@@ -27,12 +27,14 @@ const ProductCard = (props: CartProps) => {
           href={`${baseUrl}/product/${product?.slug}`}
           className="w-full relative overflow-hidden cursor-pointer h-[250px] flex items-center justify-content-center mx-auto"
         >
-          <img
-            src={`${baseUrl}/${product?.images[0]?.image}`}
-            alt=""
-            className="w-full rounded-lg"
-            style={{ height: "250px" }}
-          />
+          <picture>
+            <img
+              src={`${baseUrl}/${product?.images[0]?.image}`}
+              alt=""
+              className="w-full rounded-lg"
+              style={{ height: "250px" }}
+            />
+          </picture>
           <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
             <a
               href="#"

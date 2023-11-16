@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Swal from "sweetalert2";
@@ -11,8 +11,7 @@ import { baseUrl } from "@/config/appConfig";
 import DashboardLayout from "@/layouts/DashboardLayout";
 import { FaRegEdit } from "react-icons/fa";
 
-const DashboardPage = () => {
-
+const ProductsPage = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([] as any);
 
@@ -35,7 +34,6 @@ const DashboardPage = () => {
     getProducts();
   }, []);
 
-
   async function DeleteHandler(id: any) {
     const saved = await fetch(`/api/product/product_delete?id=${id}`, {
       method: "POST",
@@ -55,25 +53,24 @@ const DashboardPage = () => {
 
   const deleteHandler = (id: any) => {
     Swal.fire({
-      title: 'Are You Sure?',
-      icon: 'warning',
+      title: "Are You Sure?",
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Delete It!'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Delete It!",
     }).then(async (result) => {
       if (result.isConfirmed) {
         DeleteHandler(id);
       }
-    })
-  }
+    });
+  };
 
   return (
     <DashboardLayout>
       <Head>
         <title>All Products | E-Commerce</title>
       </Head>
-
 
       <div className="w-full mx-auto p-4">
         {/* Breadcrumb  */}
@@ -161,12 +158,10 @@ const DashboardPage = () => {
                   <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                       <th className="p-4" style={{ width: "10%" }}>
-                        <div className="flex items-center">
-                          Image
-                        </div>
+                        <div className="flex items-center">Image</div>
                       </th>
                       <th className="p-4" style={{ width: "70%" }}>
-                      Product Title
+                        Product Title
                       </th>
                       <th className="p-4" style={{ width: "20%" }}>
                         Action
@@ -174,26 +169,30 @@ const DashboardPage = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {
-                      loading ? null : <>
+                    {loading ? null : (
+                      <>
                         {products.map((item: any, index: number) => (
-                          <tr key={`item-${index}`} className="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                          <tr
+                            key={`item-${index}`}
+                            className="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          >
                             <td className="p-4 w-4">
                               <div className="flex items-center">
                                 <picture>
-                                  <img src={`${baseUrl}/${item.images[0].image}`} alt={item.title} style={{ width: "50px", height: "50px" }} />
+                                  <img
+                                    src={`${baseUrl}/${item.images[0].image}`}
+                                    alt={item.title}
+                                    style={{ width: "50px", height: "50px" }}
+                                  />
                                 </picture>
                               </div>
                             </td>
-                            <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                            >{item.title}
+                            <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              {item.title}
                             </td>
                             <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               <div className="flex items-center space-x-4">
-                                <button
-                                  
-                                  className="py-2 px-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                                >
+                                <button className="py-2 px-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                   <FaRegEdit className="text-base font-semibold  mr-2 -ml-0.5" />
                                   Edit
                                 </button>
@@ -221,9 +220,7 @@ const DashboardPage = () => {
                           </tr>
                         ))}
                       </>
-                    }
-
-
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -335,4 +332,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default ProductsPage;

@@ -53,16 +53,20 @@ const HomePage = () => {
 
       {/*  Main End  */}
       <div className="container w-full rounded-lg  justify-center pt-24">
-        <img
-          src={`${baseUrl}/img/offer.jpg`}
-          className="w-full rounded-lg px-12"
-          alt=""
-        />
-        <img
-          src={`${baseUrl}/img/methods.png`}
-          className="w-full px-12  container mt-12"
-          alt=""
-        />
+        <picture>
+          <img
+            src={`${baseUrl}/img/offer.jpg`}
+            className="w-full rounded-lg px-12"
+            alt=""
+          />
+        </picture>
+        <picture>
+          <img
+            src={`${baseUrl}/img/methods.png`}
+            className="w-full px-12  container mt-12"
+            alt=""
+          />
+        </picture>
       </div>
     </Layout>
   );
