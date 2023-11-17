@@ -5,7 +5,7 @@ const TopSlider = () => {
     <>
       <div
         id="default-carousel"
-        className="relative w-full p-8 lg md:container rounded"
+        className="relative w-full p-8 lg md:container-=== rounded"
         data-carousel="slide"
       >
         {/* Carousel wrapper */}

@@ -7,7 +7,7 @@ import Offers from "@/components/Home/Offers";
 import ForYou from "@/components/Home/ForYou";
 import LoadMore from "@/components/Home/LoadMore";
 import SellerCart from "@/components/Home/SellerCart";
-import TopSlider from "@/components/Home/TopSlider";
+import Slider from "@/components/Home/Slider";
 import WebFetchers from "@/components/Home/WebFetchers";
 import { baseUrl } from "@/config/appConfig";
 import Layout from "@/layouts/Layout";
@@ -20,7 +20,7 @@ const HomePage = () => {
       </Head>
 
       {/* Top Banner */}
-      <TopSlider />
+      <Slider />
       {/* Top Banner */}
 
       {/* Main Start */}
