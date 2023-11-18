@@ -1,31 +1,81 @@
+// import Swiper core and required modules
+import {
+  A11y,
+  Autoplay,
+  Navigation,
+  Pagination,
+  Scrollbar,
+} from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/swiper-buldle.min.css";
-import "swiper/swiper-bundle.css";
+import { baseUrl } from "@/config/appConfig";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
-export default () => {
+const Slider = () => {
   return (
     <Swiper
-      spaceBetween={30}
-      slidesPerView={2}
-      onSlideChange={() => console.log("slide change")}
+      className="md:container lg:container container my-2 mx-auto"
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      spaceBetween={50}
+      slidesPerView={1}
+      // navigation
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      // pagination={{ clickable: true }}
+      // scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
-      <SwiperSlide>Slide 7</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
+      <SwiperSlide className="">
+        <picture>
+          <img
+            src={`${baseUrl}/img/slider/slider-5.jpg`}
+            className="md:h-64 h-34 w-full"
+          />
+        </picture>
+      </SwiperSlide>
+      <SwiperSlide>
+        <picture>
+          <img
+            src={`${baseUrl}/img/slider/slider-2.jpg`}
+            className="md:h-64 h-34 w-full"
+          />
+        </picture>
+      </SwiperSlide>
+      <SwiperSlide>
+        <picture>
+          <img
+            src={`${baseUrl}/img/slider/slider-3.jpg`}
+            className="md:h-64 h-34 w-full"
+          />
+        </picture>
+      </SwiperSlide>
+      <SwiperSlide>
+        <picture>
+          <img
+            src={`${baseUrl}/img/slider/slider-4.jpg`}
+            className="md:h-64 h-34 w-full"
+          />
+        </picture>
+      </SwiperSlide>
+      <SwiperSlide>
+        <picture>
+          <img
+            src={`${baseUrl}/img/slider/slider-1.jpg`}
+            className="md:h-64 h-34 w-full"
+          />
+        </picture>
+      </SwiperSlide>
     </Swiper>
   );
 };
+export default Slider;
