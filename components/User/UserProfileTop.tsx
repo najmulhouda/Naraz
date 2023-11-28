@@ -85,14 +85,14 @@ const UserProfileTop: React.FC = () => {
   return (
     <>
       {user ? (
-        <div className="mr-2 lg:mr-0 dropdown relative">
+        <div className="mr-2 lg:mr-0 dropdown relative pr-5 sm:pr-0">
           <button
             type="button"
             className="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 dark:focus:ring-0 md:mr-0"
             onClick={() => handleOpen(1)}
           >
             <img
-              className="h-7 w-7 text-white rounded-full"
+              className="h-9 w-9 text-white rounded-full"
               src={user.profile_avatar}
               alt="user photo"
             />
@@ -102,7 +102,7 @@ const UserProfileTop: React.FC = () => {
                   language == "bng" ? `bangla text-xl` : "font-sans text-base"
                 }  block font-medium text-gray-100`}
               ></span>
-              <span className="-mt-1 block text-sm font-medium text-gray-200">
+              <span className="-mt-1 block text-lg font-medium text-gray-200">
                 {user.firstName}
               </span>
             </span>

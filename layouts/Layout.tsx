@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { baseUrl } from "@/config/appConfig";
 import Footer from "@/layouts/Footer";
-import Header from "@/layouts/Header";
+import Header1 from "./Header1";
 
 type Props = {
   children?: ReactNode;
@@ -33,7 +33,8 @@ const Layout = ({ children, title }: Props): JSX.Element => {
         />
       </Head>
       <ToastContainer />
-      <Header />
+      {/* <Header /> */}
+      <Header1 />
 
       <div className="full">{children}</div>
       <Footer />

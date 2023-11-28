@@ -9,14 +9,7 @@ import UserProfileTop from "@/components/User/UserProfileTop";
 import { baseUrl } from "@/config/appConfig";
 import { parseCookies } from "nookies";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
-import {
-  FaBars,
-  FaBed,
-  FaCartPlus,
-  FaRegHeart,
-  FaUtensils,
-} from "react-icons/fa";
-import { FaMattressPillow } from "react-icons/fa6";
+import { FaCartPlus, FaRegHeart } from "react-icons/fa";
 
 type User = {
   id: number;
@@ -108,7 +101,7 @@ const Header = () => {
                   <img
                     src={`${baseUrl}/img/logo/logo.png`}
                     alt="website-logo"
-                    className="md:w-48 md:h-22   "
+                    className="  "
                   />
                 </Link>
               </div>
@@ -196,76 +189,78 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <nav className=" dark:bg-gray-600 text-white">
-            <div className="lg:container">
-              <div className="row flex items-center md:space-x-5 space-x-1">
-                {/* Col 1 */}
-                <div className="relative group">
-                  <div className="bg-orange-500 ">
-                    <Link
-                      href="#"
-                      className="flex items-center space-x-2 px-5 py-3"
-                    >
-                      <span>
-                        <i className="fa-solid fa-bars text-white" />
-                        <FaBars className="text-white " />
-                      </span>
-                      <span>Categories</span>
-                    </Link>
-                  </div>
-                  {/* Dropdown Menu */}
-                  <div className="text-primary text-black dark:bg-orange-400 absolute w-full shadow-md divide-y divide-dashed divide-separatorColor opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-500">
-                    <Link
-                      href="#"
-                      className="flex items-center space-x-2 px-5 py-3"
-                    >
-                      <span>
-                        <FaBed className="text-accentOne" />
-                      </span>
-                      <span>Bedroom</span>
-                    </Link>
-                    <Link
-                      href="#"
-                      className="flex items-center space-x-2 px-5 py-3"
-                    >
-                      <span>
-                        <FaMattressPillow className="text-accentOne" />
-                      </span>
-                      <span>Mattress</span>
-                    </Link>
-                    <Link
-                      href="#"
-                      className="flex items-center space-x-2 px-5 py-3"
-                    >
-                      <span>
-                        <FaUtensils className="text-accentOne" />
-                      </span>
-                      <span>Dinning</span>
-                    </Link>
-                  </div>
-                </div>
-                {/* Col 2 */}
-                <div className="flex justify-between flex-grow">
-                  <div className="md:space-x-5 space-x-1">
-                    <span
-                      className={
-                        router.pathname == "/"
-                          ? "bg-orange-600 p-2 rounded-md"
-                          : "hover:bg-orange-600 p-2 rounded-md"
-                      }
-                    >
-                      <Link href={`${baseUrl}/`}>Home</Link>
-                    </span>
-                    <span
-                      className={
-                        router.pathname == "/shop"
-                          ? "bg-orange-600 p-2 rounded-md"
-                          : "hover:bg-orange-600 p-2 rounded-md"
-                      }
-                    >
-                      <Link href={`${baseUrl}/shop`}>Shop</Link>
-                    </span>
-                    {/* <span
+        </div>
+      </header>
+      <nav className=" dark:bg-gray-600 text-white md:sticky top-0  bg-orange-500">
+        <div className="lg:container">
+          <div className="row flex items-center md:space-x-5 space-x-1">
+            {/* Col 1 */}
+            {/* <div className="relative group">
+              <div className="bg-orange-500 ">
+                <Link
+                  href="#"
+                  className="flex items-center space-x-2 px-5 py-3"
+                >
+                  <span>
+                    <i className="fa-solid fa-bars text-white" />
+                    <FaBars className="text-white " />
+                  </span>
+                  <span>Categories</span>
+                </Link>
+              </div>
+           
+              <div className="text-primary text-black dark:bg-orange-400 absolute w-full shadow-md divide-y divide-dashed divide-separatorColor opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-500">
+                <Link
+                  href="#"
+                  className="flex items-center space-x-2 px-5 py-3"
+                >
+                  <span>
+                    <FaBed className="text-accentOne" />
+                  </span>
+                  <span>Bedroom</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center space-x-2 px-5 py-3"
+                >
+                  <span>
+                    <FaMattressPillow className="text-accentOne" />
+                  </span>
+                  <span>Mattress</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center space-x-2 px-5 py-3"
+                >
+                  <span>
+                    <FaUtensils className="text-accentOne" />
+                  </span>
+                  <span>Dinning</span>
+                </Link>
+              </div>
+            </div> */}
+            {/* Col 2 */}
+            <div className="flex justify-between flex-grow p-3">
+              <div className="md:space-x-5 space-x-1">
+                <span
+                  className={
+                    router.pathname == "/"
+                      ? "bg-orange-600 p-2 rounded-md"
+                      : "hover:bg-orange-600 p-2 rounded-md"
+                  }
+                >
+                  <Link href={`${baseUrl}/`}>Home</Link>
+                </span>
+                <span
+                  className={
+                    router.pathname == "/shop"
+                      ? "bg-orange-600 p-2 rounded-md"
+                      : "hover:bg-orange-600 p-2 rounded-md"
+                  }
+                >
+                  <Link href={`${baseUrl}/shop`}>Shop</Link>
+                </span>
+                {/* <span
                       className={
                         router.pathname == "/about"
                           ? "bg-orange-600 p-2 rounded-md"
@@ -274,7 +269,7 @@ const Header = () => {
                     >
                       <Link href={`${baseUrl}/about`}>About</Link>
                     </span> */}
-                    {/* <span
+                {/* <span
                       className={
                         router.pathname == "/contact-us"
                           ? "bg-orange-600 p-4"
@@ -283,21 +278,19 @@ const Header = () => {
                     >
                       <Link href={`${baseUrl}/contact-us`}>Contact</Link>
                     </span> */}
-                  </div>
+              </div>
 
-                  {/* <div>
+              {/* <div>
                 {userInfo ? (
                   <> {userInfo.firstName}</>
                 ) : (
                   <Link href={`${baseUrl}/login`}>Login/Register</Link>
                 )}
               </div> */}
-                </div>
-              </div>
             </div>
-          </nav>
+          </div>
         </div>
-      </header>
+      </nav>
       {/* End Header */}
 
       {/* Start Navbar */}
