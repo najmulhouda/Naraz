@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 import cookie from "js-cookie";
 import { useRouter } from "next/router";
 import { parseCookies } from "nookies";
-import { FaUser } from "react-icons/fa";
 
 type User = {
   _id: string;
@@ -93,7 +92,8 @@ const UserProfileTop: React.FC = () => {
           >
             <img
               className="h-9 w-9 text-white rounded-full"
-              src={user.profile_avatar}
+              src={`${baseUrl}/img/user.png`}
+              // src={user.profile_avatar}
               alt="user photo"
             />
             <span className="ml-2 hidden text-left md:block">
@@ -181,10 +181,18 @@ const UserProfileTop: React.FC = () => {
           </div>
         </div>
       ) : (
-        <Link href={`${baseUrl}/login`}>
-          <FaUser className="text-[24px] text-black dark:text-white" />
-          <p className="text-black dark:text-white">Account</p>
-        </Link>
+        <Link href={`${baseUrl}/login`}>Login/Register</Link>
+        // <Link href={`${baseUrl}/login`}>
+        //   <FaUser className="text-[24px] text-black dark:text-white " />
+        //   <p className="text-black dark:text-white text-center ">Account</p>
+        // </Link>
+        // <div>
+        //   {userInfo ? (
+        //     <> {userInfo}</>
+        //   ) : (
+        //     <Link href={`${baseUrl}/login`}>Login/Register</Link>
+        //   )}
+        // </div>
       )}
     </>
   );

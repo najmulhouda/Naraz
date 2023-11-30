@@ -162,33 +162,47 @@ const Header1 = () => {
             {renderThemeMode()}
           </div>
         </div>
-        <div className="flex justify-between gap-4 md:order-2 text-base font-medium pr-3  ">
-          <UserProfileTop text-lg />
-          <Navbar.Toggle />
+        <div className="flex justify-between  md:order-2 text-base font-medium pr-3 ">
+          <UserProfileTop />
+          <Navbar.Toggle className="" />
         </div>
-        <Navbar.Collapse className="text-base font-medium">
-          <Navbar>
-            <span
-              className={
-                router.pathname == "/"
-                  ? "bg-orange-600 p-2 rounded-md"
-                  : "hover:bg-orange-600 p-2 rounded-md"
-              }
-            >
-              <Link href={`${baseUrl}/`}>Home</Link>
-            </span>
-          </Navbar>
-          <Navbar>
-            <span
-              className={
-                router.pathname == "/"
-                  ? "bg-orange-600 p-2 rounded-md"
-                  : "hover:bg-orange-600 p-2 rounded-md"
-              }
-            >
-              <Link href={`${baseUrl}/shop`}>Shop</Link>
-            </span>
-          </Navbar>
+        <Navbar.Collapse className="">
+          <span
+            className={
+              router.pathname == "/"
+                ? " text-white p-2 bg-orange-600 rounded-md"
+                : "hover:bg-orange-600 p-2 rounded-md"
+            }
+          >
+            <Link href={`${baseUrl}/`}>Home</Link>
+          </span>
+          <span
+            className={
+              router.pathname == "/shop"
+                ? " text-white p-2 bg-orange-600 rounded-md"
+                : "hover:bg-orange-600 p-2 rounded-md"
+            }
+          >
+            <Link href={`${baseUrl}/shop`}>Shop</Link>
+          </span>
+          <span
+            className={
+              router.pathname == "/"
+                ? " text-white p-2 bg-orange-600 rounded-md"
+                : "hover:bg-orange-600 p-2 rounded-md"
+            }
+          >
+            <Link href={`${baseUrl}/`}>Home</Link>
+          </span>
+          <span
+            className={
+              router.pathname == "/"
+                ? " text-white p-2 bg-orange-600 rounded-md"
+                : "hover:bg-orange-600 p-2 rounded-md"
+            }
+          >
+            <Link href={`${baseUrl}/`}>Home</Link>
+          </span>
         </Navbar.Collapse>
       </Navbar>
     </div>
