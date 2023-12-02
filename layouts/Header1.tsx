@@ -1,17 +1,30 @@
+import UserProfileTop from "@/components/User/UserProfileTop";
 import { baseUrl } from "@/config/appConfig";
 import { setCartList } from "@/lib/reduxStore/slices/storeSlice";
 import { Navbar } from "flowbite-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import UserProfileTop from "@/components/User/UserProfileTop";
 import { parseCookies } from "nookies";
+import { useEffect, useState } from "react";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import { FaCartPlus, FaRegHeart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 
+import { Dropdown } from "flowbite-react";
+
+function Component() {
+  return (
+    <div className="flex items-center gap-4 bg-orange-500">
+      <Dropdown label="more" size="sm" className="bg-orange-500">
+        <Dropdown.Item>Dashboard</Dropdown.Item>
+        <Dropdown.Item>Settings</Dropdown.Item>
+        <Dropdown.Item>Earnings</Dropdown.Item>
+        <Dropdown.Item>Sign out</Dropdown.Item>
+      </Dropdown>
+    </div>
+  );
+}
 type User = {
   id: number;
   firstName: string;
@@ -88,18 +101,18 @@ const Header1 = () => {
     }
   };
   return (
-    <div>
+    <div className=" sticky top-0 z-50 bg-orange-500 dark:bg-gray-800">
       <Navbar fluid className="container bg-orange-500">
-        <div className="flex">
+        <div className="flex justify-between   sm:w-3/4  mr-6">
           <Navbar.Brand href="/">
             <img
-              src={`${baseUrl}/img/logo/logo.png`}
-              className="md:w-48 md:h-22      h-18 sm:h-18"
+              src={`${baseUrl}/img/logo/logo1.png`}
+              className="md:w-48 md:h-22   p-1 sm:p-1   h-18 sm:h-18"
               alt="Naraz logo"
             />
           </Navbar.Brand>
-          <div className="md:mt-6 mt-3 h-14 sm:h-18 pr-5 sm:pr-5">
-            <form className="w-full">
+          <div className="md:mt-5 mt-3 h-14 sm:h-18 sm:w-full ">
+            <form className="">
               <label
                 htmlFor="default-search"
                 className="mb-2 text-sm font-medium  text-gray-900 sr-only dark:text-white"
@@ -139,7 +152,7 @@ const Header1 = () => {
             </form>
           </div>
         </div>
-        <div className="flex space-x-3 pl-7 sm:pl-0">
+        <div className="flex space-x-3 pl-2 sm:pl-0 ">
           <div className="relative flex flex-col items-center cursor-pointer">
             <Link href={`${baseUrl}/wishlist`}>
               <FaRegHeart className="text-[24px] text-white dark:text-white" />
@@ -166,56 +179,18 @@ const Header1 = () => {
             <UserProfileTop />
           </div>
         </div>
-        <div className="flex justify-between  md:order-2  font-medium pr-3 ">
+        <div className="flex justify-between  md:order-2  font-medium pr-3">
           {/* <UserProfileTop /> */}
           <Navbar.Toggle className="break-normal" />
         </div>
 
-        {/* <Navbar.Collapse className="">
-          <span
-            className={
-              router.pathname == "/"
-                ? " text-white p-2 bg-orange-600 rounded-md"
-                : "hover:bg-orange-600 p-2 rounded-md"
-            }
-          >
-            <Link href={`${baseUrl}/`}>Home</Link>
-          </span>
-          <span
-            className={
-              router.pathname == "/shop"
-                ? " text-white p-2 bg-orange-600 rounded-md"
-                : "hover:bg-orange-600 p-2 rounded-md"
-            }
-          >
-            <Link href={`${baseUrl}/shop`}>Shop</Link>
-          </span>
-          <span
-            className={
-              router.pathname == "/"
-                ? " text-white p-2 bg-orange-600 rounded-md"
-                : "hover:bg-orange-600 p-2 rounded-md"
-            }
-          >
-            <Link href={`${baseUrl}/`}>Home</Link>
-          </span>
-          <span
-            className={
-              router.pathname == "/"
-                ? " text-white p-2 bg-orange-600 rounded-md"
-                : "hover:bg-orange-600 p-2 rounded-md"
-            }
-          >
-            <Link href={`${baseUrl}/`}>Home</Link>
-          </span>
-        </Navbar.Collapse> */}
-        <div>
-          <Navbar.Collapse className="">
+        <div className="w-full">
+          <Navbar.Collapse className="w-full px-7">
             <span
               className={
                 router.pathname == "/"
-                  ? " text-white p-2 bg-orange-600 rounded-md"
-                  : "hover:bg-orange-600 p-2 rounded-md"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb2"
               }
             >
               <Link href={`${baseUrl}/`}>Home</Link>
@@ -223,30 +198,110 @@ const Header1 = () => {
             <span
               className={
                 router.pathname == "/shop"
-                  ? " text-white p-2 bg-orange-600 rounded-md"
-                  : "hover:bg-orange-600 p-2 rounded-md"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
               }
             >
               <Link href={`${baseUrl}/shop`}>Shop</Link>
             </span>
             <span
               className={
-                router.pathname == "/"
-                  ? " text-white p-2 bg-orange-600 rounded-md"
-                  : "hover:bg-orange-600 p-2 rounded-md"
+                router.pathname == "/shop"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 dropdownHoverButton pb-2"
               }
             >
-              <Link href={`${baseUrl}/`}>Home</Link>
+              {/* <div
+                id="dropdownHover"
+                className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+              >
+                <ul
+                  className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                  aria-labelledby="dropdownHoverButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Dashboard
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Settings
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Earnings
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div> */}
+              <Link href={`${baseUrl}/shop`}>Men's & Boys' Fashion</Link>
             </span>
             <span
               className={
-                router.pathname == "/"
-                  ? " text-white p-2 bg-orange-600 rounded-md"
-                  : "hover:bg-orange-600 p-2 rounded-md"
+                router.pathname == "/shop"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
               }
             >
-              <Link href={`${baseUrl}/`}>Home</Link>
+              <Link href={`${baseUrl}/shop`}>Women's & Girls' Fashion</Link>
             </span>
+            <span
+              className={
+                router.pathname == "/shop"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
+              }
+            >
+              <Link href={`${baseUrl}/shop`}> Electronics Devices</Link>
+            </span>
+            <span
+              className={
+                router.pathname == "/shop"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
+              }
+            >
+              <Link href={`${baseUrl}/shop`}> Sports & Outdoors</Link>
+            </span>
+            <span
+              className={
+                router.pathname == "/shop"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
+              }
+            >
+              <Link href={`${baseUrl}/shop`}>Mother & Baby</Link>
+            </span>
+            <span
+              className={
+                router.pathname == "/shop"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
+              }
+            >
+              <Link href={`${baseUrl}/shop`}> Groceries</Link>
+            </span>
+
+            {/* <Component /> */}
           </Navbar.Collapse>
         </div>
       </Navbar>

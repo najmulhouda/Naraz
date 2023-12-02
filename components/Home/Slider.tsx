@@ -20,7 +20,7 @@ import "swiper/css/scrollbar";
 const Slider = () => {
   return (
     <Swiper
-      className="md:container lg:container container my-2 mx-auto"
+      className="md:container lg:container container my-2 mx-20 rounded-lg px-10"
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       spaceBetween={50}

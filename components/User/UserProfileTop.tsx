@@ -181,7 +181,9 @@ const UserProfileTop: React.FC = () => {
           </div>
         </div>
       ) : (
-        <Link href={`${baseUrl}/login`}>Login/Register</Link>
+        <Link className="mt-2" href={`${baseUrl}/login`}>
+          Login/Register
+        </Link>
         // <Link href={`${baseUrl}/login`}>
         //   <FaUser className="text-[24px] text-black dark:text-white " />
         //   <p className="text-black dark:text-white text-center ">Account</p>
