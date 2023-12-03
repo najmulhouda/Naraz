@@ -87,7 +87,7 @@ const Header1 = () => {
     }
   };
   return (
-    <div className=" sticky top-0 z-50 bg-orange-500 dark:bg-gray-800">
+    <div className=" bg-orange-500  dark:bg-gray-800">
       <Navbar fluid className="container  bg-orange-500">
         <div className="flex justify-between   sm:w-3/4 sm:pl-0 pl-2">
           <Navbar.Brand href="/">
@@ -138,7 +138,7 @@ const Header1 = () => {
             </form>
           </div>
         </div>
-        <div className="flex space-x-3 pl-3 sm:pl-0 ">
+        <div className="flex space-x-3 pl-3 sm:pl-0  sticky top-0 z-50">
           <div className="relative flex flex-col items-center cursor-pointer">
             <Link href={`${baseUrl}/wishlist`}>
               <FaRegHeart className="text-[24px] text-white dark:text-white" />
@@ -166,11 +166,10 @@ const Header1 = () => {
           </div>
         </div>
         <div className="flex justify-between  md:order-2 border-2 rounded-lg sm:border-2 md:border-none border-white font-medium mr-3">
-          {/* <UserProfileTop /> */}
           <Navbar.Toggle className="break-normal border-white" />
         </div>
 
-        <div className="w-full">
+        <div className="">
           <Navbar.Collapse className="w-full px-2 md:px-0">
             <span
               className={
@@ -274,6 +273,7 @@ const Header1 = () => {
           </Navbar.Collapse>
         </div>
       </Navbar>
+      {/* extra navber */}
     </div>
   );
 };

@@ -2,8 +2,8 @@ import { baseUrl } from "@/config/appConfig";
 import { setAddCart } from "@/lib/reduxStore/slices/storeSlice";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaRegHeart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-
 interface CartProps {
   product?: any;
 }
@@ -31,7 +31,7 @@ const ProductCard = (props: CartProps) => {
             <img
               src={`${baseUrl}/${product?.images[0]?.image}`}
               alt=""
-              className="w-full sm:h-full h-44 rounded-lg"
+              className="w-full sm:h-full h-44 rounded-lg group-hover:scale-105 transition duration-500"
               // style={{ height: "150px" }}
             />
           </picture>
@@ -40,7 +40,7 @@ const ProductCard = (props: CartProps) => {
               href="#"
               className="w-8 h-8 rounded-full bg-orange-500 p-2 flex items-center justify-center"
             >
-              <i className="fa-solid fa-magnifying-glass" />
+              <FaRegHeart className="text-white" />
             </a>
             {/* <a
               href="#"

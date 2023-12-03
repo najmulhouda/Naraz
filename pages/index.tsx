@@ -15,7 +15,7 @@ const HomePage = () => {
   return (
     <Layout>
       <Head>
-        <title>No.1 E-Commerce</title>
+        <title>Trusted online store | E-Commerce</title>
       </Head>
 
       {/* Top Banner */}
