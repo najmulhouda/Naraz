@@ -30,13 +30,13 @@ const NewArrival = () => {
       <h2 className="text-center font-semibold text-3xl uppercase pb-10">
         Top New Arrival
       </h2>
-      <div className="w-full grid sm:grid-cols-1 md:grid-cols-4 rounded-lg grid-cols-4 gap-2 ">
+      <div className="w-full grid grid-cols-2 md:grid-cols-4 rounded-lg lg:grid-cols-6 h-4/5 gap-2 ">
         {loading ? null : (
           <>
             {products.map((item: any, index: number) => (
               <div
                 key={`product-${index}`}
-                className="col p-2 border border-orange-500  shadow rounded-lg border-separate group"
+                className="col p-2 border   shadow rounded-lg border-separate group"
               >
                 <ProductCard product={item} />
               </div>

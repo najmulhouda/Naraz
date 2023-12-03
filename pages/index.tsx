@@ -29,22 +29,22 @@ const HomePage = () => {
         <WebFetchers />
       </div>
 
-      <div className="w-full pt-24">
+      <div className="w-full pt-10">
         <NewArrival />
       </div>
 
-      <div className="w-full pt-24">
+      <div className="w-full pt-10">
         <Offers />
       </div>
 
-      <div className="w-full pt-24">
+      <div className="w-full pt-10">
         <Categorys />
       </div>
-      <div className="w-full pt-12">
+      <div className="w-full pt-10">
         <ForYou />
       </div>
 
-      <div className="w-full pt-24">
+      <div className="w-full pt-10">
         <LoadMore />
       </div>
 
