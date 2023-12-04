@@ -138,12 +138,12 @@ const Header1 = () => {
             </form>
           </div>
         </div>
-        <div className="flex space-x-3 pl-3 sm:pl-0  sticky top-0 z-50">
+        <div className="flex space-x-3 pl-3 sm:pl-0  ">
           <div className="relative flex flex-col items-center cursor-pointer">
             <Link href={`${baseUrl}/wishlist`}>
               <FaRegHeart className="text-[24px] text-white dark:text-white" />
               <span className="bg-orange-400 h-5 w-5 flex items-center justify-center rounded-full absolute -top-2 left-4">
-                8
+                {cartCount}
               </span>
               <p className="text-white dark:text-white">WishList</p>
             </Link>
@@ -165,7 +165,7 @@ const Header1 = () => {
             <UserProfileTop />
           </div>
         </div>
-        <div className="flex justify-between  md:order-2 border-2 rounded-lg sm:border-2 md:border-none border-white font-medium mr-3">
+        <div className="flex justify-between  md:order-2 border-2 rounded-lg sm:border-2 md:border-none border-white font-medium mr-3 ml-13">
           <Navbar.Toggle className="break-normal border-white" />
         </div>
 
@@ -246,13 +246,13 @@ const Header1 = () => {
 
             <div className="relative group">
               <div className="">
-                <Link href="#" className="flex items-center ">
+                <Link href="#" className="flex items-center">
                   <span></span>
                   <span>More-Category</span>
                 </Link>
               </div>
               {/* Dropdown Menu */}
-              <div className="text-primary absolute bg-white dark:bg-slate-800 w-full shadow-md divide-y divide-dashed divide-separatorColor opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-500">
+              <div className="text-primary absolute bg-white w-full shadow-md divide-y divide-dashed divide-separatorColor opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-500 z-10">
                 <Link href="#" className="flex items-center space-x-2  p-2.5">
                   <span>Health & Beauty</span>
                 </Link>
