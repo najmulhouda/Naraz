@@ -2,7 +2,7 @@ import { baseUrl } from "@/config/appConfig";
 import { setAddCart } from "@/lib/reduxStore/slices/storeSlice";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { FaRegHeart } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 interface CartProps {
   product?: any;
@@ -36,20 +36,12 @@ const ProductCard = (props: CartProps) => {
             />
           </picture>
           <div className="absolute inset-0 flex items-center justify-center space-x-1 bg-black/20 opacity-0 group-hover:opacity-100 transition">
-            {/* <a
+            <a
               href="#"
               className="w-8 h-8 rounded-full bg-orange-500 p-2 flex items-center justify-center"
             >
               <FaRegHeart className="text-white" />
-            </a> */}
-            <button
-              onClick={() => addCart(product)}
-              className="w-8 h-8 rounded-full bg-orange-500 p-2 flex items-center justify-center"
-            >
-              <div className="flex items-center justify-center">
-                <FaRegHeart className="text-white" />
-              </div>
-            </button>
+            </a>
             {/* <a
               href="#"
               className="w-8 h-8 rounded-full bg-orange-500 p-2 flex items-center justify-center"
@@ -90,16 +82,25 @@ const ProductCard = (props: CartProps) => {
                         </div>
                     </div> */}
           {/* Product Rating*/}
-          <div className="w-full mt-2">
+          <div className="w-full flex mt-2 gap-1">
             <button
               onClick={() => addCart(product)}
-              className="w-full h-13 bottom-0 text-primary border block py-1 font-medium hover:bg-gradient-to-r bg-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition duration-150"
+              className="w-1/2 h-8 bottom-0 text-primary border block py-1 font-medium hover:bg-gradient-to-r bg-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition duration-150"
             >
               <div className="flex items-center justify-center">
-                <span className=" pr-3">
-                  <AiOutlineShoppingCart />
+                <span className=" ">
+                  <FaRegHeart className="text-white" />
                 </span>
-                Add to Cart
+              </div>
+            </button>
+            <button
+              onClick={() => addCart(product)}
+              className="w-1/2 h-8 bottom-0 text-primary border block py-1 font-medium hover:bg-gradient-to-r bg-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition duration-150"
+            >
+              <div className="flex items-center justify-center">
+                <span className=" ">
+                  <AiOutlineShoppingCart className="text-white" />
+                </span>
               </div>
             </button>
           </div>

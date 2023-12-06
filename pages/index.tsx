@@ -49,7 +49,7 @@ const HomePage = () => {
       </div>
 
       {/*  Main End  */}
-      <div className="container w-full rounded-lg  justify-center pt-24">
+      <div className=" w-full container-none md:container lg:container rounded-lg  justify-center pt-24">
         <picture>
           <img
             src={`${baseUrl}/img/offer.jpg`}
@@ -60,7 +60,7 @@ const HomePage = () => {
         <picture>
           <img
             src={`${baseUrl}/img/methods.png`}
-            className="w-full px-12  container mt-12"
+            className="w-full px-12  mt-12"
             alt=""
           />
         </picture>

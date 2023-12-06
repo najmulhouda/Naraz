@@ -27,16 +27,16 @@ const ForYou = () => {
 
   return (
     <div className="container">
-      <h2 className="text-center pt-8 mb-8 bg-orange-500 dark:bg-gray-800 font-semibold text-3xl uppercase pb-10">
-        Best Collection For you
+      <h2 className="text-center font-semibold text-3xl uppercase pb-10">
+        Top New Arrival
       </h2>
-      <div className="w-full grid sm:grid-cols-1 md:grid-cols-3 rounded-lg grid-cols-5 gap-4 px-12">
+      <div className="w-full grid grid-cols-2 md:grid-cols-4 rounded-lg lg:grid-cols-6 h-4/5 gap-2 ">
         {loading ? null : (
           <>
             {products.map((item: any, index: number) => (
               <div
                 key={`product-${index}`}
-                className="col p-4  border border-orange-500  shadow rounded-lg border-separate group"
+                className="col p-2 border   shadow rounded-lg border-separate group"
               >
                 <ProductCard product={item} />
               </div>

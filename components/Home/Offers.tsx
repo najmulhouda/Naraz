@@ -3,11 +3,11 @@ import { baseUrl } from "@/config/appConfig";
 const Offers = () => {
   return (
     <div className="container">
-      <div className="row grid grid-cols-2 gap-6">
+      <div className="row grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Col 1 */}
         <div className="col rounded-xl bg-amber-300/20 flex justify-between items-center px-10 group">
           {/* Inner Col 1 */}
-          <div className="space-y-5 basis-1/2">
+          <div className="space-y-5 basis-1/2 py-5">
             <div>
               <h3 className="font-bold text-lg text-amber-500">30% off</h3>
               <h2 className="text-primary font-bold text-lg">Free Shipping</h2>
@@ -34,7 +34,7 @@ const Offers = () => {
         {/* Col 2 */}
         <div className="col rounded-xl bg-red-300/20 flex justify-between items-center px-10 group">
           {/* Inner Col 1 */}
-          <div className="space-y-5 basis-1/2">
+          <div className="space-y-5 basis-1/2 py-5">
             <div>
               <h3 className="font-bold text-lg text-amber-500">50% off</h3>
               <h2 className="text-primary font-bold text-lg">Flash Sale</h2>

@@ -6,7 +6,7 @@ const Categorys = () => {
       <h2 className="text-primary font-semibold text-3xl uppercase pb-10">
         Shop By Category
       </h2>
-      <div className="row grid grid-cols-8 gap-3">
+      <div className="row grid grid-cols-4 md:grid-cols-8 gap-3">
         {/* Col 1 */}
         <div className="col h-3/5  relative overflow-hidden rounded-sm group">
           <picture>
