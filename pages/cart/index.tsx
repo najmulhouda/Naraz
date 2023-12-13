@@ -94,7 +94,7 @@ const CartItemPage = () => {
             <div className=" border-gray-300 pt-4">
               <div className="flex justify-between">
                 <span className="font-semibold dark:text-white">Subtotal</span>
-                <span className="text-xl text-black dark:text-white">$59</span>
+                <span className="text-xl text-black dark:text-white">$</span>
               </div>
               <p className="text-gray-500 mb-6">
                 Shipping and taxes calculated at checkout.
