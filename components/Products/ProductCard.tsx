@@ -40,14 +40,14 @@ const ProductCard = (props: CartProps) => {
               href="#"
               className="w-8 h-8 rounded-full bg-orange-500 p-2 flex items-center justify-center"
             >
-              <FaRegHeart className="text-white" />
+              {/* <FaRegHeart className="text-white" />  */}
             </a>
-            {/* <a
+            <a
               href="#"
               className="w-8 h-8 rounded-full bg-orange-500 p-2 flex items-center justify-center"
             >
               <i className="fa-regular fa-heart" />
-            </a> */}
+            </a>
           </div>
         </Link>
         {/* product image */}

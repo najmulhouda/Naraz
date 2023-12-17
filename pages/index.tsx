@@ -6,6 +6,7 @@ import Offers from "@/components/Home/Offers";
 
 import ForYou from "@/components/Home/ForYou";
 import LoadMore from "@/components/Home/LoadMore";
+import SellerCart from "@/components/Home/SellerCart";
 import Slider from "@/components/Home/Slider";
 import WebFetchers from "@/components/Home/WebFetchers";
 import { baseUrl } from "@/config/appConfig";
@@ -23,7 +24,9 @@ const HomePage = () => {
       {/* Top Banner */}
 
       {/* Main Start */}
-      <div className="w-full  ">{/* <SellerCart /> */}</div>
+      <div className="w-full  ">
+        <SellerCart />
+      </div>
 
       <div className="w-full pt-5">
         <WebFetchers />

@@ -257,10 +257,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 const WishListPage = () => {
   const dispatch = useDispatch();
-  const cartCount = useSelector((state: any) => state.utils.cartList.count);
-  const cartList = useSelector((state: any) => state.utils.cartList.list);
+  // const wishCount = useSelector((state: any) => state.utils.wishList.count);
+  const wishList = useSelector((state: any) => state.utils.wishList.list);
 
-  console.log("cartList", cartList);
+  console.log("wishList", wishList);
 
   const removeCart = (id: any) => {
     dispatch(setCartDelete(id));
@@ -279,7 +279,7 @@ const WishListPage = () => {
             <div>
               <div>
                 <div>
-                  {cartList.map((item: any, index: number) => (
+                  {wishList.map((item: any, index: number) => (
                     <div
                       key={index}
                       className="w-full dark:bg-gray-900 dark:text-white p-2 border rounded-lg flex flex-col sm:flex-row items-center gap-4"
