@@ -9,7 +9,7 @@
 //           </h2>
 //         </div>
 //         <div className="grid md:grid-cols-5 grid-cols-2 ">
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -80,7 +80,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -151,7 +151,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -222,7 +222,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -293,7 +293,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -364,7 +364,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -435,7 +435,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -506,7 +506,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -577,7 +577,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -648,7 +648,7 @@
 //               </button>
 //             </div>
 //           </div>
-//           <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+//           <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
 //             <div>
 //               <picture>
 //                 <img
@@ -742,7 +742,7 @@ import "swiper/css/scrollbar";
 const SellerCart = () => {
   return (
     <div className="container">
-      <div className="flex justify-between mx-10">
+      <div className="flex justify-between mx-10 mb-4">
         <h2 className="text-center">Sellers</h2>
 
         <h2>
@@ -752,31 +752,31 @@ const SellerCart = () => {
       <Swiper
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={0}
-        slidesPerView={1}
+        spaceBetween={20}
+        slidesPerView={2}
         navigation
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
         // onSwiper={(swiper) => console.log(swiper)}
         // onSlideChange={() => console.log("slide change")}
         breakpoints={{
-          440: {
+          660: {
             slidesPerView: 2,
-            spaceBetween: 200,
+            spaceBetween: 100,
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 125,
           },
           1024: {
-            slidesPerView: 4,
-            spaceBetween: 100,
+            slidesPerView: 5,
+            spaceBetween: 90,
           },
         }}
         className="container  mySwiper sm:sidePerView={2} sidePerView={2}"
       >
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -850,7 +850,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -924,7 +924,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -998,7 +998,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -1072,7 +1072,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -1146,7 +1146,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -1220,7 +1220,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -1294,7 +1294,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -1368,7 +1368,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>
@@ -1442,7 +1442,7 @@ const SellerCart = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border rounded-lg border-orange-500 w-44 px-12 py-2 dark:bg-gray-800 mx-5">
+          <div className="border rounded-lg border-orange-500 w-30 px-4 py-2 dark:bg-gray-800 mx-5">
             {" "}
             <div>
               <picture>

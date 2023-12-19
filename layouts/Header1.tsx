@@ -89,7 +89,7 @@ const Header1 = () => {
   return (
     <div className=" bg-orange-500  dark:bg-gray-800">
       <Navbar fluid className="container  bg-orange-500">
-        <div className="flex justify-between   sm:w-3/4 sm:pl-0 pl-2">
+        <div className="flex justify-between lg:w-3/4  sm:w-3/4  md:w-3/5  sm:pl-0 pl-2">
           <Navbar.Brand href="/">
             <img
               src={`${baseUrl}/img/logo/logo1.png`}

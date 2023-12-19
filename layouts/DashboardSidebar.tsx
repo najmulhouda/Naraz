@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-
 import { baseUrl } from "@/config/appConfig";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 import MenuItem from "@/components/Menu/MenuItem";
 import MenuList from "@/lib/menuList.json";
@@ -14,7 +14,6 @@ interface SidebarProps {
 }
 
 const DashboardSidebar = (props: SidebarProps) => {
-
   const { sidebarShow, setSidebarShow } = props;
 
   const sidebarRef = useRef<any>();
@@ -27,7 +26,7 @@ const DashboardSidebar = (props: SidebarProps) => {
         setSidebarShow(false);
       }
     };
-    
+
     document.addEventListener("mousedown", handler);
     return () => {
       document.removeEventListener("mousedown", handler);
@@ -35,7 +34,12 @@ const DashboardSidebar = (props: SidebarProps) => {
   });
 
   return (
-    <aside className={`${sidebarShow ? "translate-x-0" : "-translate-x-full"} delay-200  duration-[400ms] absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden  ease-linear bg-gray-800 lg:static lg:translate-x-0`} ref={sidebarRef}>
+    <aside
+      className={`${
+        sidebarShow ? "translate-x-0" : "-translate-x-full"
+      } delay-200  duration-[400ms] absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden  ease-linear bg-gray-800 lg:static lg:translate-x-0`}
+      ref={sidebarRef}
+    >
       {/* SIDEBAR HEADER */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <Link href={`${baseUrl}/dashboard`}>
@@ -45,7 +49,10 @@ const DashboardSidebar = (props: SidebarProps) => {
             alt="Logo"
           />
         </Link>
-        <button className="block lg:hidden" onClick={() => setSidebarShow(!sidebarShow)}>
+        <button
+          className="block lg:hidden"
+          onClick={() => setSidebarShow(!sidebarShow)}
+        >
           <svg
             className="fill-current"
             width={20}
@@ -71,7 +78,9 @@ const DashboardSidebar = (props: SidebarProps) => {
               {/* Menu Item Dashboard */}
               <li>
                 <Link
-                  className={`${currentPath == '/dashboard' ? 'bg-[#2E3A47]' : ''} group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium  text-white ease-in-out hover:bg-[#2E3A47] `}
+                  className={`${
+                    currentPath == "/dashboard" ? "bg-[#2E3A47]" : ""
+                  } group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium  text-white ease-in-out hover:bg-[#2E3A47] `}
                   href={`${baseUrl}/dashboard`}
                 >
                   <RxDashboard className="text-[19px]" />
@@ -81,7 +90,11 @@ const DashboardSidebar = (props: SidebarProps) => {
               {/* Menu Item Dashboard */}
               {MenuList.map((item: any, index: number) => (
                 <li className="text-white">
-                  <MenuItem key={index} item={item} currentPath={currentPath.search(item.url)} />
+                  <MenuItem
+                    key={index}
+                    item={item}
+                    currentPath={currentPath.search(item.url)}
+                  />
                 </li>
               ))}
             </ul>
@@ -89,6 +102,17 @@ const DashboardSidebar = (props: SidebarProps) => {
         </nav>
         {/* Sidebar Menu */}
       </div>
+      <button className="">
+        <Link
+          className="text-white absolute bottom-0 btn btn-primary w-3/4 flex ml-10 bg-gray-700 hover:bg-gray-900 px-6 p-4 rounded-xl mb-10 justify-between  "
+          href={`${baseUrl}/`}
+        >
+          Close Dashboard
+          <span className="text-white mt-1">
+            <IoMdCloseCircleOutline />
+          </span>
+        </Link>
+      </button>
     </aside>
   );
 };

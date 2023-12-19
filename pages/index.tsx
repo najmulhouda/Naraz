@@ -24,11 +24,11 @@ const HomePage = () => {
       {/* Top Banner */}
 
       {/* Main Start */}
-      <div className="w-full  ">
+      <div className="w-full pt-5 ">
         <SellerCart />
       </div>
 
-      <div className="w-full pt-5">
+      <div className="w-full pt-10">
         <WebFetchers />
       </div>
 
