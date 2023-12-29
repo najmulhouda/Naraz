@@ -327,7 +327,7 @@ const Product = () => {
               </div>
               {/* Row 2 */}
               <div className="">
-                <div className="w-full grid sm:grid-cols-1 md:grid-cols-3 rounded-lg grid-cols-3 gap-2 px-12">
+                <div className="w-full grid grid-cols-2  md:grid-cols-2 lg:grid-cols-3 rounded-lg  gap-2 px-12">
                   {loading ? null : (
                     <>
                       {products.map((item: any, index: number) => (

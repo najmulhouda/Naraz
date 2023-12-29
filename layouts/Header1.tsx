@@ -165,7 +165,7 @@ const Header1 = () => {
             <UserProfileTop />
           </div>
         </div>
-        <div className="flex justify-between  md:order-2 border-2 rounded-lg sm:border-2 md:border-none border-white font-medium mr-3 ml-13">
+        <div className="flex justify-between  md:order-2 border-2 rounded-lg sm:border-2 md:border-none border-white font-medium mr-6  ml-13">
           <Navbar.Toggle className="break-normal border-white" />
         </div>
 
@@ -191,12 +191,12 @@ const Header1 = () => {
             </span>
             <span
               className={
-                router.pathname == "/shop"
+                router.pathname == "/boys' Fashion"
                   ? " border-b-2 text-white pb-2"
                   : "hover:border-b-2 dropdownHoverButton pb-2"
               }
             >
-              <Link href={`${baseUrl}/shop`}>Men's & Boys' Fashion</Link>
+              <Link href={`${baseUrl}/boys`}>Men's & Boys' Fashion</Link>
             </span>
             <span
               className={
