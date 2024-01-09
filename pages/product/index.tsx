@@ -15,4 +15,5 @@ export async function getServerSideProps(context: Context) {
       product,
     },
   };
+  console.log("pro", product);
 }
