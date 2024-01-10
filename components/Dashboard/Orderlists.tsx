@@ -1,5 +1,5 @@
 import { baseUrl } from "@/config/appConfig";
-
+import Image from "next/image";
 const Orderlists = () => {
   return (
     <div>
@@ -79,7 +79,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -116,7 +116,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -153,7 +153,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -190,7 +190,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -227,7 +227,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -264,7 +264,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -301,7 +301,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -338,7 +338,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -375,7 +375,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -412,7 +412,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""
@@ -449,7 +449,7 @@ const Orderlists = () => {
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                <img
+                <Image
                   className="w-10 h-10 rounded-full"
                   src={`${baseUrl}/img/user/user-03.png`}
                   alt=""

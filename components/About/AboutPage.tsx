@@ -1,5 +1,5 @@
 import { baseUrl } from "@/config/appConfig";
-
+import Image from "next/image";
 const AboutPage = () => {
   return (
     <div>
@@ -13,14 +13,14 @@ const AboutPage = () => {
               <div className="-mx-3 flex items-center sm:-mx-4">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="py-3 sm:py-4">
-                    <img
+                    <Image
                       src={`${baseUrl}/img/category/shoes.jpg`}
                       alt=""
                       className="w-full rounded-2xl"
                     />
                   </div>
                   <div className="py-3 sm:py-4">
-                    <img
+                    <Image
                       src={`${baseUrl}/img/category/laptop.jpg`}
                       alt=""
                       className="w-full rounded-2xl"
@@ -29,7 +29,7 @@ const AboutPage = () => {
                 </div>
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="relative z-10 my-4">
-                    <img
+                    <Image
                       src={`${baseUrl}/img/category/phone.jpg`}
                       alt=""
                       className="w-full rounded-2xl"

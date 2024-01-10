@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
+import cookie from "js-cookie";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { parseCookies } from "nookies";
+import { useEffect, useState } from "react";
 
-import cookie from "js-cookie";
-import { parseCookies, setCookie, destroyCookie } from "nookies";
-
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { baseUrl } from "@/config/appConfig";
-import Layout from "@/layouts/Layout";
 import InputEmail from "@/components/Inputs/InputEmail";
 import InputPass from "@/components/Inputs/InputPass";
+import { baseUrl } from "@/config/appConfig";
+import Layout from "@/layouts/Layout";
 
-const login = () => {
-
+const Login = () => {
   const router = useRouter();
   const cookies = parseCookies();
 
@@ -27,32 +25,26 @@ const login = () => {
   const [error, setError] = useState({
     email: "",
     password: "",
-  })
-
+  });
 
   useEffect(() => {
     if (cookies.user) {
-      router.push('/')
+      router.push("/");
     }
-  }, [cookies?.user, router])
+  }, [cookies?.user, router]);
 
   const updateUser = (e: { target: { name: any; value: any } }) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-
-  const validate = (
-    values:
-      {
-        email: string,
-        password: string,
-      }
-  ) => {
+  const validate = (values: { email: string; password: string }) => {
     let errors: any = {};
 
     if (!values.email) {
       errors.email = "Email is required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
       errors.email = "Invalid email address";
     }
 
@@ -63,12 +55,11 @@ const login = () => {
     }
 
     return errors;
-  }
+  };
 
-
-  const handelLogin = async (e: { preventDefault: () => void; }) => {
+  const handelLogin = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log('user', user);
+    console.log("user", user);
     setLading(true);
 
     const errors = validate(user);
@@ -84,7 +75,7 @@ const login = () => {
           }),
         });
         const result = await login.json();
-        console.log('user Login', result)
+        console.log("user Login", result);
 
         if (result.status == true) {
           toast.success(result.message);
@@ -98,17 +89,13 @@ const login = () => {
         } else {
           toast.error(result.message);
         }
-
       } catch (err) {
-        console.log(err)
+        console.log(err);
       } finally {
         setLading(false);
       }
-
     }
-  }
-
-
+  };
 
   return (
     <Layout>
@@ -128,7 +115,13 @@ const login = () => {
           </p>
           <div className="mb-4">
             <div className="mb-6">
-              <label htmlFor="email" className="block mb-2 texT font-medium text-gray-900 dark:text-white"> Email</label>
+              <label
+                htmlFor="email"
+                className="block mb-2 texT font-medium text-gray-900 dark:text-white"
+              >
+                {" "}
+                Email
+              </label>
               <InputEmail
                 onChange={updateUser}
                 name="email"
@@ -139,7 +132,12 @@ const login = () => {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="password" className="block mb-2 text font-medium text-gray-900 dark:text-white">Password</label>
+              <label
+                htmlFor="password"
+                className="block mb-2 text font-medium text-gray-900 dark:text-white"
+              >
+                Password
+              </label>
               <InputPass
                 onChange={updateUser}
                 name="password"
@@ -203,4 +201,4 @@ const login = () => {
     </Layout>
   );
 };
-export default login;
+export default Login;

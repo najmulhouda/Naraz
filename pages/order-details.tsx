@@ -1,7 +1,6 @@
-import React from "react";
-import { baseUrl } from '@/config/appConfig';
+import { baseUrl } from "@/config/appConfig";
 import Layout from "@/layouts/Layout";
-
+import Image from "next/image";
 
 const orderDetails = () => {
   return (
@@ -42,12 +41,12 @@ const orderDetails = () => {
               {/* Product Item */}
               <div className="flex gap-6">
                 <div className="w-16 h-16 flex items-center border border-gray-300">
-                  <img src={`${baseUrl}/img/1_1.jpg`} alt="" />
+                  <Image src={`${baseUrl}/img/1_1.jpg`} alt="" />
                 </div>
                 <div className="flex-1 flex flex-col justify-between pb-3">
                   <h3 className="text-ellipsis mb-4">
-                    Logitech G502 HERO High Performance Wired Gaming Mouse, HERO 25K
-                    Sensor, 25,600 DPI, RGB, Adjustable Weights, 11
+                    Logitech G502 HERO High Performance Wired Gaming Mouse, HERO
+                    25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11
                   </h3>
                 </div>
                 <div className="flex flex-col justify-between items-end pb-3 w-32">
@@ -59,12 +58,12 @@ const orderDetails = () => {
               {/* Product Item */}
               <div className="flex gap-6">
                 <div className="w-16 h-16 flex items-center border border-gray-300">
-                  <img src={`${baseUrl}/img/1_2.jpg`} alt="" />
+                  <Image src={`${baseUrl}/img/1_2.jpg`} alt="" />
                 </div>
                 <div className="flex-1 flex flex-col justify-between pb-3">
                   <h3 className="text-ellipsis mb-4">
-                    Logitech G502 HERO High Performance Wired Gaming Mouse, HERO 25K
-                    Sensor, 25,600 DPI, RGB, Adjustable Weights, 11
+                    Logitech G502 HERO High Performance Wired Gaming Mouse, HERO
+                    25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11
                   </h3>
                 </div>
                 <div className="flex flex-col justify-between items-end pb-3 w-32">
@@ -76,12 +75,12 @@ const orderDetails = () => {
               {/* Product Item */}
               <div className="flex gap-6">
                 <div className="w-16 h-16 flex items-center border border-gray-300">
-                  <img src={`${baseUrl}/img/1_3.jpg`} alt="" />
+                  <Image src={`${baseUrl}/img/1_3.jpg`} alt="" />
                 </div>
                 <div className="flex-1 flex flex-col justify-between pb-3">
                   <h3 className="text-ellipsis mb-4">
-                    Logitech G502 HERO High Performance Wired Gaming Mouse, HERO 25K
-                    Sensor, 25,600 DPI, RGB, Adjustable Weights, 11
+                    Logitech G502 HERO High Performance Wired Gaming Mouse, HERO
+                    25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11
                   </h3>
                 </div>
                 <div className="flex flex-col justify-between items-end pb-3 w-32">
@@ -117,6 +116,6 @@ const orderDetails = () => {
         </div>
       </main>
     </Layout>
-  )
-}
-export default orderDetails
+  );
+};
+export default orderDetails;
