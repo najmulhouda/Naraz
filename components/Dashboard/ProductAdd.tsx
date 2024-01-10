@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react";
-import Head from "next/head";
-import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
-import { parseCookies, setCookie, destroyCookie } from "nookies";
-
+import { parseCookies } from "nookies";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-import { baseUrl } from "@/config/appConfig";
-import DashboardLayout from "@/layouts/DashboardLayout";
-import InputText from "@/components/Inputs/InputText";
 import InputNumber from "@/components/Inputs/InputNumber";
+import InputText from "@/components/Inputs/InputText";
 import InputTextarea from "@/components/Inputs/InputTextarea";
+import { baseUrl } from "@/config/appConfig";
 import { FaTrash } from "react-icons/fa";
 
 type User = {
@@ -25,7 +21,6 @@ type User = {
 };
 
 const ProductAdd = () => {
-
   const router = useRouter();
   const cookies = parseCookies();
 
@@ -71,6 +66,7 @@ const ProductAdd = () => {
     } else {
       setLoading(false);
     }
+    getUser(cookies?.user);
   }, [cookies?.user]);
 
   const getCats = async () => {
@@ -92,20 +88,17 @@ const ProductAdd = () => {
     getCats();
   }, []);
 
-
   const updateProduct = (e: { target: { name: any; value: any } }) => {
     setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
   };
 
-  const ImageUpload = async (
-    e: {
-      target: {
-        [x: string]: any;
-        name: any;
-        value: any;
-      };
-    }
-  ) => {
+  const ImageUpload = async (e: {
+    target: {
+      [x: string]: any;
+      name: any;
+      value: any;
+    };
+  }) => {
     setLoadingImg(true);
     for (let i = 0; i < e.target.files.length; i++) {
       const file = e.target.files[i];
@@ -115,8 +108,12 @@ const ProductAdd = () => {
       // console.log('size', size);
 
       //@ts-ignore
-      if (type == "image/jpg" || type == "image/jpeg" || type == "image/gif" || type == "image/png") {
-
+      if (
+        type == "image/jpg" ||
+        type == "image/jpeg" ||
+        type == "image/gif" ||
+        type == "image/png"
+      ) {
         var formdata = new FormData();
         formdata.append("image", file, file.name);
         var myHeaders = new Headers();
@@ -130,17 +127,16 @@ const ProductAdd = () => {
         const upload = await fetch(`${baseUrl}/api/upload`, requestOptions);
         const result = await upload.json();
 
-        const imagePath = '/images/' + result?.image;
+        const imagePath = "/images/" + result?.image;
 
         const image: any = {
           id: new Date().getTime(),
           image: imagePath,
-        }
+        };
 
         setImages((oldImages: any): any => [...oldImages, image]);
-
       } else {
-        toast.error('This file not uploaded')
+        toast.error("This file not uploaded");
       }
     }
     setLoadingImg(false);
@@ -150,16 +146,12 @@ const ProductAdd = () => {
     setImages(images.filter((item: any) => item.id !== id));
   };
 
-
-  const validate = (
-    values:
-      {
-        title: string,
-        images: string,
-        category: string,
-        price: string,
-      }
-  ) => {
+  const validate = (values: {
+    title: string;
+    images: string;
+    category: string;
+    price: string;
+  }) => {
     let errors: any = {};
 
     if (!values.title) {
@@ -178,7 +170,7 @@ const ProductAdd = () => {
       errors.price = "Category is required";
     }
     return errors;
-  }
+  };
 
   async function SubmitHandler(e: any) {
     e.preventDefault();
@@ -194,7 +186,7 @@ const ProductAdd = () => {
         method: "POST",
         body: JSON.stringify({
           ...newProduct,
-          images: images
+          images: images,
         }),
       });
       const result = await addProduct.json();
@@ -215,7 +207,6 @@ const ProductAdd = () => {
         setTimeout(() => {
           router.push("/dashboard/products");
         }, 2500);
-
       } else {
         toast.error(result.error);
       }
@@ -224,16 +215,16 @@ const ProductAdd = () => {
     }
   }
 
-
   return (
     <>
       <ToastContainer />
       <div className="w-full bg-gray-50 dark:bg-gray-900 p-2 antialiased  mb-10">
         <form onSubmit={SubmitHandler}>
-
           <div className="w-full grid grid-cols-1 gap-4 p-2">
             <div className="mb-4">
-              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">Title</label>
+              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">
+                Title
+              </label>
               <InputText
                 onChange={updateProduct}
                 name="title"
@@ -245,7 +236,9 @@ const ProductAdd = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">Select Category</label>
+              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">
+                Select Category
+              </label>
               <select
                 name="category"
                 onChange={updateProduct}
@@ -253,19 +246,23 @@ const ProductAdd = () => {
                 required={true}
               >
                 <option>Select Category</option>
-                {
-                  categories.map((cat: any, index: number) => (
-                    <option key={index} value={cat._id}>{cat.title}</option>
-                  ))
-                }
+                {categories.map((cat: any, index: number) => (
+                  <option key={index} value={cat._id}>
+                    {cat.title}
+                  </option>
+                ))}
               </select>
-              {
-                error?.category?.length > 0 ? <p className="w-full mt-1 mb-1 text-red-500  text-base font-mono font-semibold antialiased">{error?.category}</p> : null
-              }
+              {error?.category?.length > 0 ? (
+                <p className="w-full mt-1 mb-1 text-red-500  text-base font-mono font-semibold antialiased">
+                  {error?.category}
+                </p>
+              ) : null}
             </div>
 
             <div className="mb-4">
-              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">Price</label>
+              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">
+                Price
+              </label>
               <InputNumber
                 onChange={updateProduct}
                 name="price"
@@ -277,7 +274,9 @@ const ProductAdd = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">Description</label>
+              <label className="block mb-4 text-sm font-semibold text-gray-900 dark:text-white">
+                Description
+              </label>
               <InputTextarea
                 onChange={updateProduct}
                 name="description"
@@ -288,7 +287,6 @@ const ProductAdd = () => {
               />
             </div>
 
-
             <div className="mb-4">
               <div className="w-full flex flex-wrap gap-3 ">
                 {images.map((item: any, index: any) => (
@@ -296,14 +294,18 @@ const ProductAdd = () => {
                     key={`${item.id}.${index}`}
                     className="w-20 h-24 rounded-lg bg-gray-400"
                   >
-                    {item.image == '' ? null : (
+                    {item.image == "" ? null : (
                       <>
                         <div className="w-full h-20 relative">
                           <FaTrash
                             className="w-4 h-4 mt-1 ml-14 text-red-600 z-10 absolute cursor-pointer"
                             onClick={() => photoDel(item.id)}
                           />
-                          <img src={item.image} className="w-20 h-24 rounded-lg" />
+                          <Image
+                            alt=""
+                            src={item.image}
+                            className="w-20 h-24 rounded-lg"
+                          />
                         </div>
                       </>
                     )}
@@ -334,14 +336,17 @@ const ProductAdd = () => {
                     />
                   </svg>
                   <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                    <span className="font-semibold">Click to upload</span> or drag
-                    and drop
+                    <span className="font-semibold">Click to upload</span> or
+                    drag and drop
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
                     SVG, PNG, JPG or GIF (MAX. 800x400px)
                   </p>
                 </div>
-                <input id="ImageUpload" type="file" className="hidden"
+                <input
+                  id="ImageUpload"
+                  type="file"
+                  className="hidden"
                   multiple
                   onChange={(e) => ImageUpload(e)}
                 />

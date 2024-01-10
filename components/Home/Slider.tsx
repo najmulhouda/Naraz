@@ -7,10 +7,9 @@ import {
   Scrollbar,
 } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 
 // Import Swiper styles
-import { baseUrl } from "@/config/appConfig";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
@@ -35,9 +34,10 @@ const Slider = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide className="">
+      {/* <SwiperSlide className="">
         <picture>
-          <img
+          <Image 
+          alt=""
             src={`${baseUrl}/img/slider/slider-5.jpg`}
             className="md:h-64 h-34 w-full"
           />
@@ -45,7 +45,8 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <picture>
-          <img
+          <Image
+          alt=""
             src={`${baseUrl}/img/slider/slider-2.jpg`}
             className="md:h-64 h-34 w-full"
           />
@@ -53,7 +54,8 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <picture>
-          <img
+          <Image
+          alt=""
             src={`${baseUrl}/img/slider/slider-3.jpg`}
             className="md:h-64 h-34 w-full"
           />
@@ -61,7 +63,8 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <picture>
-          <img
+          <Image
+          alt=""
             src={`${baseUrl}/img/slider/slider-4.jpg`}
             className="md:h-64 h-34 w-full"
           />
@@ -69,12 +72,13 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <picture>
-          <img
+          <Image
+          alt=""
             src={`${baseUrl}/img/slider/slider-1.jpg`}
             className="md:h-64 h-34 w-full"
           />
         </picture>
-      </SwiperSlide>
+      </SwiperSlide> */}
     </Swiper>
   );
 };
