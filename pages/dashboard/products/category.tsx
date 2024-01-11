@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -361,7 +360,7 @@ const CategoryPage = () => {
                             <td className="p-4 w-4">
                               <div className="flex items-center">
                                 <picture>
-                                  <Image
+                                  <img
                                     src={`${baseUrl}/${cat.logo}`}
                                     alt={cat.title}
                                     style={{ width: "50px", height: "50px" }}
@@ -584,7 +583,7 @@ const CategoryPage = () => {
                                   setNewCategory({ ...newCategory, logo: "" })
                                 }
                               />
-                              <Image
+                              <img
                                 alt="logo"
                                 src={`${newCategory.logo}`}
                                 className="w-20 h-24 rounded-lg"
@@ -729,7 +728,7 @@ const CategoryPage = () => {
                                   setEditCategory({ ...editCategory, logo: "" })
                                 }
                               />
-                              <Image
+                              <img
                                 alt="logo"
                                 src={`${editCategory.logo}`}
                                 className="w-20 h-24 rounded-lg"

@@ -38,6 +38,7 @@ const Slider = () => {
       <SwiperSlide className="">
         <picture>
           <img
+            alt=""
             src={`${baseUrl}/img/slider/slider-5.jpg`}
             className="md:h-64 h-34 w-full"
           />
