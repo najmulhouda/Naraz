@@ -1,11 +1,9 @@
-
-import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 
+import ProductAdd from "@/components/Dashboard/ProductAdd";
 import { baseUrl } from "@/config/appConfig";
 import DashboardLayout from "@/layouts/DashboardLayout";
-import ProductAdd from "@/components/Dashboard/ProductAdd";
 
 const AddProduct = () => {
   return (
@@ -35,10 +33,8 @@ const AddProduct = () => {
           <ProductAdd />
         </div>
       </div>
-
     </DashboardLayout>
   );
 };
-
 
 export default AddProduct;

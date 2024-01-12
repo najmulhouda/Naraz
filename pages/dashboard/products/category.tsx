@@ -583,11 +583,13 @@ const CategoryPage = () => {
                                   setNewCategory({ ...newCategory, logo: "" })
                                 }
                               />
-                              <img
-                                alt="logo"
-                                src={`${newCategory.logo}`}
-                                className="w-20 h-24 rounded-lg"
-                              />
+                              <picture>
+                                <img
+                                  alt="logo"
+                                  src={`${newCategory.logo}`}
+                                  className="w-20 h-24 rounded-lg"
+                                />
+                              </picture>
                             </div>
                           </>
                         )}
@@ -728,11 +730,13 @@ const CategoryPage = () => {
                                   setEditCategory({ ...editCategory, logo: "" })
                                 }
                               />
-                              <img
-                                alt="logo"
-                                src={`${editCategory.logo}`}
-                                className="w-20 h-24 rounded-lg"
-                              />
+                              <picture>
+                                <img
+                                  alt="logo"
+                                  src={`${editCategory.logo}`}
+                                  className="w-20 h-24 rounded-lg"
+                                />
+                              </picture>
                             </div>
                           </>
                         )}

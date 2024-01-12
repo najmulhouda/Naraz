@@ -18,39 +18,31 @@ const HomePage = () => {
       <Head>
         <title>Trusted online store | E-Commerce</title>
       </Head>
-
       {/* Top Banner */}
       <Slider />
       {/* Top Banner */}
-
       {/* Main Start */}
       <div className="w-full pt-5 ">
         <SellerCart />
       </div>
-
       <div className="w-full pt-10">
         <WebFetchers />
       </div>
-
       <div className="w-full pt-10">
         <NewArrival />
       </div>
-
       <div className="w-full pt-10">
         <Offers />
       </div>
-
       <div className="w-full pt-10">
         <Categorys />
       </div>
       <div className="w-full pt-10">
         <ForYou />
       </div>
-
       <div className="w-full pt-10">
         <LoadMore />
       </div>
-
       {/*  Main End  */}
       <div className=" w-full container-none md:container lg:container rounded-lg  justify-center pt-24">
         <picture>

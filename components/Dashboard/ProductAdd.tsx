@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { parseCookies } from "nookies";
 import { useEffect, useState } from "react";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -66,7 +66,6 @@ const ProductAdd = () => {
     } else {
       setLoading(false);
     }
-    getUser(cookies?.user);
   }, [cookies?.user]);
 
   const getCats = async () => {
@@ -301,11 +300,13 @@ const ProductAdd = () => {
                             className="w-4 h-4 mt-1 ml-14 text-red-600 z-10 absolute cursor-pointer"
                             onClick={() => photoDel(item.id)}
                           />
-                          <Image
-                            alt=""
-                            src={item.image}
-                            className="w-20 h-24 rounded-lg"
-                          />
+                          <picture>
+                            <img
+                              alt=""
+                              src={item.image}
+                              className="w-20 h-24 rounded-lg"
+                            />
+                          </picture>
                         </div>
                       </>
                     )}
