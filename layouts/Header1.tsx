@@ -227,30 +227,30 @@ const Header1 = () => {
             </span>
             <span
               className={
-                router.pathname == "/shop"
+                router.pathname == "/sports"
                   ? " border-b-2 text-white pb-2"
                   : "hover:border-b-2 pb-2"
               }
             >
-              <Link href={`${baseUrl}/shop`}> Sports & Outdoors</Link>
+              <Link href={`${baseUrl}/sports`}> Sports & Outdoors</Link>
             </span>
             <span
               className={
-                router.pathname == "/shop"
+                router.pathname == "/mother"
                   ? " border-b-2 text-white pb-2"
                   : "hover:border-b-2 pb-2"
               }
             >
-              <Link href={`${baseUrl}/shop`}>Mother & Baby</Link>
+              <Link href={`${baseUrl}/mother`}>Mother & Baby</Link>
             </span>
             <span
               className={
-                router.pathname == "/shop"
+                router.pathname == "/groceries"
                   ? " border-b-2 text-white pb-2"
                   : "hover:border-b-2 pb-2"
               }
             >
-              <Link href={`${baseUrl}/shop`}> Groceries</Link>
+              <Link href={`${baseUrl}/groceries`}> Groceries</Link>
             </span>
 
             <div className="relative group">
