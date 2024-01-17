@@ -165,7 +165,7 @@ const Header1 = () => {
             <UserProfileTop />
           </div>
         </div>
-        <div className="flex justify-between  md:order-2 border-2 rounded-lg sm:border-2 md:border-none border-white font-medium mr-6  ">
+        <div className="flex justify-between  md:order-2 border-2 rounded-lg sm:border-2 md:border-none border-white font-medium mr-6   ">
           <Navbar.Toggle className="break-normal border-white" />
         </div>
 

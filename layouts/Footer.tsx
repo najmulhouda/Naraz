@@ -14,8 +14,9 @@ const Footer = () => {
                 <img src="images/logo/logo.png" alt="" className="w-24" />
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
-                illo minima ullam architecto provident dolorem.
+                Discover Naraz, your go-to destination for premium products and
+                exceptional shopping experiences. We are committed to bringing
+                you the latest trends and highest quality items.
               </p>
               <div>
                 <h2 className="text-primary font-bold text-lg pb-3">
@@ -109,18 +110,19 @@ const Footer = () => {
                   <span>
                     <FaLocationDot className="mr-3 text-['16px']" />
                   </span>
-                  <p>6795 Unknown City, NM 14300, United States Of America</p>
+                  <p>6795 Dhaka City, Bangladesh</p>
                 </div>
                 <div className="flex">
                   <span>
                     <FaPhone className="mr-3 text-['16px']" />
                   </span>
-                  <p>+123 456 789, +123 456 789</p>
+                  <p>+880 01746915574</p>
                 </div>
                 <div className="flex">
                   <span>
-                    <GrMail className="mr-3 text-['16px']" />
+                    <GrMail className="mr-3 text-['16px'] flex " />
                   </span>
+                  <p> najmulhouda6@gmail.com</p>
                 </div>
               </div>
               <div className="flex space-x-3">
@@ -153,7 +155,7 @@ const Footer = () => {
           <div className="row">
             <div className="col">
               <p className="text-center">
-                Copyright ©2023 | All Rights Reserved
+                Copyright ©2024 | All Rights Reserved By Naraz
               </p>
             </div>
           </div>
