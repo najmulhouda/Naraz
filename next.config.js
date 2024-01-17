@@ -12,10 +12,17 @@ const nextConfig = {
   env: {
     NEXT_URL: NEXT_URL,
     MONGO_URI: MONGO_URI,
-    JWT_SECRET:JWT_SECRET,
+    JWT_SECRET: JWT_SECRET,
     EMAIL_SERVICE: EMAIL_SERVICE,
     EMAIL_USERNAME: EMAIL_USERNAME,
     EMAIL_PASSWORD: EMAIL_PASSWORD,
+  },
+  experimental: {
+    //   concurrentFeatures: true,
+    //   externalDir: true,
+    forceSwcTransforms: true,
+    //   esmExternals: false,
+    //   webpackBuildWorker: true
   }
 }
 
