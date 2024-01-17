@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="w-full">
       <div className="py-10 mt-24 border-t border-separate">
         <div className="container">
-          <div className="row grid grid-cols-3 gap-x-10">
+          <div className="row grid grid-cols-1 md:grid-cols-3 gap-x-10">
             {/* Col 1 */}
-            <div className="col space-y-3">
+            <div className="col  space-y-3">
               <div>
                 <img src="images/logo/logo.png" alt="" className="w-24" />
               </div>
@@ -121,7 +121,6 @@ const Footer = () => {
                   <span>
                     <GrMail className="mr-3 text-['16px']" />
                   </span>
-                  <p>hello@world.com</p>
                 </div>
               </div>
               <div className="flex space-x-3">

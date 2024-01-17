@@ -91,7 +91,7 @@ const UserProfileTop: React.FC = () => {
             onClick={() => handleOpen(1)}
           >
             <img
-              className="h-9 w-9 mx-6 sm:ml-0 text-white rounded-full"
+              className="h-9 w-9 mx-5 md:mx-0 sm:ml-0 text-white rounded-full"
               src={`${baseUrl}/img/user.png`}
               // src={user.profile_avatar}
               alt="user photo"
