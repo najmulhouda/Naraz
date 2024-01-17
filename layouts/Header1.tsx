@@ -175,7 +175,7 @@ const Header1 = () => {
               className={
                 router.pathname == "/"
                   ? " border-b-2 text-white pb-2"
-                  : "hover:border-b-2 pb2"
+                  : "hover:border-b-2 pb-2"
               }
             >
               <Link href={`${baseUrl}/`}>Home</Link>
@@ -189,32 +189,41 @@ const Header1 = () => {
             >
               <Link href={`${baseUrl}/shop`}>Shop</Link>
             </span>
-            <span
+            {/* <span
               className={
                 router.pathname == "/boys' Fashion"
                   ? " border-b-2 text-white pb-2"
-                  : "hover:border-b-2 dropdownHoverButton pb-2"
+                  : "hover:border-b-2 pb-2"
+              }
+            >
+              <Link href={`${baseUrl}/boys`}>Men's & Boys' Fashion</Link>
+            </span> */}
+            <span
+              className={
+                router.pathname == "/girls"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
+              }
+            >
+              <Link href={`${baseUrl}/girls`}>Women's & Girls' Fashion</Link>
+            </span>
+            <span
+              className={
+                router.pathname == "/boys"
+                  ? " border-b-2 text-white pb-2"
+                  : "hover:border-b-2 pb-2"
               }
             >
               <Link href={`${baseUrl}/boys`}>Men's & Boys' Fashion</Link>
             </span>
             <span
               className={
-                router.pathname == "/shop"
+                router.pathname == "/electronics"
                   ? " border-b-2 text-white pb-2"
                   : "hover:border-b-2 pb-2"
               }
             >
-              <Link href={`${baseUrl}/shop`}>Women's & Girls' Fashion</Link>
-            </span>
-            <span
-              className={
-                router.pathname == "/shop"
-                  ? " border-b-2 text-white pb-2"
-                  : "hover:border-b-2 pb-2"
-              }
-            >
-              <Link href={`${baseUrl}/shop`}> Electronics Devices</Link>
+              <Link href={`${baseUrl}/electronics`}> Electronics Devices</Link>
             </span>
             <span
               className={
