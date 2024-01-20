@@ -11,6 +11,7 @@ import Slider from "@/components/Home/Slider";
 import WebFetchers from "@/components/Home/WebFetchers";
 import { baseUrl } from "@/config/appConfig";
 import Layout from "@/layouts/Layout";
+import Marquee from "react-fast-marquee";
 
 const HomePage = () => {
   return (
@@ -25,9 +26,16 @@ const HomePage = () => {
       <div className="w-full pt-5 ">
         <SellerCart />
       </div>
+
       <div className="w-full pt-10">
         <WebFetchers />
       </div>
+      <Marquee className="w-full container sticky mt-10 text-2xl  bg-gray-200 dark:bg-slate-600">
+        This site is under development. This site is under development. This
+        site is under development.This site is under development. This site is
+        under development. This site is under development. This site is under
+        development.
+      </Marquee>
       <div className="w-full pt-10">
         <NewArrival />
       </div>
