@@ -113,6 +113,10 @@ const Login = () => {
               create new account
             </Link>
           </p>
+          <p>
+            For dashboard access use this email and password Email:
+            najmulhouda6@gmail.com pass: 111111
+          </p>
           <div className="mb-4">
             <div className="mb-6">
               <label
